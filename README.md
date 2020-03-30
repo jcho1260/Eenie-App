@@ -10,7 +10,7 @@ StoryBoard Planning:
 - Login Screen/making new account
 - Main screen: old choices with option for creating new choice
 - Another Screen (new choice): uploading choices - there should be a camera option, a camera roll option, and a typing box
-- Crop option on the uploading screen, you can crop the image before uploading
+    - Crop option on the uploading screen, you can crop the image before uploading
 - Next two screens: Presents all the choices, starting w all of them and then narrowing down to the most liked. Presents choices two at a time. If they input text, they are taken to the text screen and if they upload images they will go to the image screen after they upload all the images.
     - 2 pictures side by side
     - Text 2 rows
@@ -23,4 +23,3 @@ Features to Explore:
 - Navigation from one screen to next based on text vs. image input
 - Pop-up for titling the list
 - Saving list to account
-
