@@ -18,7 +18,7 @@ StoryBoard Planning:
 
 Features to Explore:
 - Login screen/function (login & new account)
-- Accessing and saving information
+    - Accessing and saving information
 - UIImagePicker (?) → for taking pictures/uploading from camera roll
 - Navigation from one screen to next based on text vs. image input
 - Pop-up for titling the list
