@@ -16,6 +16,7 @@
 		51395AD3243D997D0021EE01 /* allListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51395AD2243D997D0021EE01 /* allListsTableViewController.swift */; };
 		51395AD6243D9FA40021EE01 /* allLists.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51395AD4243D9FA40021EE01 /* allLists.xcdatamodeld */; };
 		51395ADC243DA5500021EE01 /* detailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51395ADB243DA5500021EE01 /* detailTableViewController.swift */; };
+		51CCA86C2441891500E354B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51CCA86B2441891500E354B4 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		51395AD2243D997D0021EE01 /* allListsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allListsTableViewController.swift; sourceTree = "<group>"; };
 		51395AD5243D9FA40021EE01 /* allLists.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = allLists.xcdatamodel; sourceTree = "<group>"; };
 		51395ADB243DA5500021EE01 /* detailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailTableViewController.swift; sourceTree = "<group>"; };
+		51CCA86B2441891500E354B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				51395AD4243D9FA40021EE01 /* allLists.xcdatamodeld */,
 				4EC60DEF2432389F00FD165D /* Assets.xcassets */,
 				4EC60DF12432389F00FD165D /* LaunchScreen.storyboard */,
+				51CCA86B2441891500E354B4 /* GoogleService-Info.plist */,
 				4EC60DF42432389F00FD165D /* Info.plist */,
 			);
 			path = Choices;
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EC60DF32432389F00FD165D /* LaunchScreen.storyboard in Resources */,
+				51CCA86C2441891500E354B4 /* GoogleService-Info.plist in Resources */,
 				4EC60DF02432389F00FD165D /* Assets.xcassets in Resources */,
 				4EC60DEE2432389E00FD165D /* Main.storyboard in Resources */,
 			);

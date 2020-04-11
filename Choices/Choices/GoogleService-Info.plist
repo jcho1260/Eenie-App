@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>434226658374-j5k5gqgrv5dbmql7rtdk0o6a863ihomc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.434226658374-j5k5gqgrv5dbmql7rtdk0o6a863ihomc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC8Y734rR-NfsXR_zvt74XZMYqhtlZqcg8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>434226658374</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.callie.Choices</string>
+	<key>PROJECT_ID</key>
+	<string>choosing-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>choosing-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:434226658374:ios:8fe318b6d664fb33db9e47</string>
+	<key>DATABASE_URL</key>
+	<string>https://choosing-app.firebaseio.com</string>
+</dict>
+</plist>
