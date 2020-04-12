@@ -27,10 +27,10 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(showSaveUserAlertController))
+        
         // Do any additional setup after loading the view.
         refChoices = Database.database().reference().child("choices")
-        
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(showSaveUserAlertController))
         refChoices.observe(.value, with: {(snapshot) in
             var tempChoices = [Choices]()
             
@@ -53,41 +53,41 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
     }
     
-    @objc public func showSaveUserAlertController() {
-                let choiceRef = Database.database().reference().child("lists").childByAutoId()
-                
-                let alertCtrl = UIAlertController(title: "Save List", message: "Create a name to save list as", preferredStyle: .alert)
-
-                // Add text field to alert controller
-                alertCtrl.addTextField { (textField) in
-                    self.textField = textField
-                    self.textField.autocapitalizationType = .words
-                    self.textField.placeholder = "e.g Food I Want to Eat"
-                }
-
-                // Add cancel button to alert controller
-                alertCtrl.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-                // "Add" button with callback
-                alertCtrl.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
-                    if let newList = self.textField.text, newList != "" {
-                        let choiceObject = [
-                            "id": choiceRef.key,
-                            "name": newList
-                        ]
-                        choiceRef.setValue(choiceObject, withCompletionBlock: { error, ref in
-                            if error == nil {
-                                self.dismiss(animated: true, completion: nil)
-                            }
-                            else{
-                                
-                            }
-                        })
-                    }
-                }))
-
-                present(alertCtrl, animated: true, completion: nil)
-            }
+//   @objc public func showSaveUserAlertController() {
+//       let choiceRef = Database.database().reference().child("lists").childByAutoId()
+//
+//       let alertCtrl = UIAlertController(title: "Save List", message: "Create a name to save list as", preferredStyle: .alert)
+//
+//       // Add text field to alert controller
+//       alertCtrl.addTextField { (textField) in
+//           self.textField = textField
+//           self.textField.autocapitalizationType = .words
+//           self.textField.placeholder = "e.g Food I Want to Eat"
+//       }
+//
+//       // Add cancel button to alert controller
+//       alertCtrl.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//
+//       // "Add" button with callback
+//       alertCtrl.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
+//           if let newList = self.textField.text, newList != "" {
+//               let choiceObject = [
+//                   "id": choiceRef.key,
+//                   "name": newList
+//               ]
+//               choiceRef.setValue(choiceObject, withCompletionBlock: { error, ref in
+//                   if error == nil {
+//                       self.dismiss(animated: true, completion: nil)
+//                   }
+//                   else{
+//
+//                   }
+//               })
+//           }
+//       }))
+//
+//       present(alertCtrl, animated: true, completion: nil)
+//   }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allChoices.count
