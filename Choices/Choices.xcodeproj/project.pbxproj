@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		51395ADC243DA5500021EE01 /* detailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51395ADB243DA5500021EE01 /* detailTableViewController.swift */; };
 		51CCA86C2441891500E354B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51CCA86B2441891500E354B4 /* GoogleService-Info.plist */; };
 		BB0950D464EB14C0C2BC9279 /* Pods_Choices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592E18C38D76C24967F55679 /* Pods_Choices.framework */; };
+		E0F96E012442AFA10013FA75 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F96E002442AFA10013FA75 /* CreateAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		51CCA86B2441891500E354B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		592E18C38D76C24967F55679 /* Pods_Choices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Choices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3BADE517A307CDC8B822B9 /* Pods-Choices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Choices.debug.xcconfig"; path = "Target Support Files/Pods-Choices/Pods-Choices.debug.xcconfig"; sourceTree = "<group>"; };
+		E0F96E002442AFA10013FA75 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				4EC60DF12432389F00FD165D /* LaunchScreen.storyboard */,
 				51CCA86B2441891500E354B4 /* GoogleService-Info.plist */,
 				4EC60DF42432389F00FD165D /* Info.plist */,
+				E0F96E002442AFA10013FA75 /* CreateAccountViewController.swift */,
 			);
 			path = Choices;
 			sourceTree = "<group>";
@@ -92,7 +95,6 @@
 				6E3BADE517A307CDC8B822B9 /* Pods-Choices.debug.xcconfig */,
 				0DD26AC64DC804A2FEB7DE69 /* Pods-Choices.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -220,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0F96E012442AFA10013FA75 /* CreateAccountViewController.swift in Sources */,
 				51395ADC243DA5500021EE01 /* detailTableViewController.swift in Sources */,
 				4EC60DEB2432389E00FD165D /* ViewController.swift in Sources */,
 				4EC60DE72432389D00FD165D /* AppDelegate.swift in Sources */,

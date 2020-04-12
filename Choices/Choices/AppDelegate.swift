@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    FirebaseApp.configure() //this connects us to the googleService info plist (firebase) at the beginning
+//    Auth.auth().createUser(withEmail: "faker@faker.com", password: "123123") { authResult, error in
+//       if let err = error {
+//          print("There was error! \(err)")
+//          return
+//        } // TODO: Created user was successful. Go to next screen because they have already been authenticated.
+//        print("We made it!")
+//    }
+
+        
+        
+
     return true
   }
 
