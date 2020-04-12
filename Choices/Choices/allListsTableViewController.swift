@@ -10,9 +10,27 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
+class ListTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var listLab: UILabel!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+
+}
+
 class allListsTableViewController: UITableViewController {
 
-    var items = [Items]()
+    var allLists = [Lists]()
     var textField: UITextField!
     
     @IBAction func newListButton(_ sender: UIBarButtonItem) {
@@ -66,12 +84,36 @@ class allListsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    //getting all the lists and showing in table view
+    func observeLists(){
+        let listRef = Database.database().reference().child("lists")
+        
+        listRef.observe(.value, with: {snapshot in
+            
+            var tempLists = [Lists]()
+            
+            for child in snapshot.children{
+                if let childSnapshot = child as? DataSnapshot,
+                    let dict = childSnapshot.value as? [String:Any],
+                    let text = dict["name"] as? String,
+                    let choices = dict["name"] as? [Choices]{
+                    let item = Lists(id: childSnapshot.key, name: text, choices:choices)
+                    tempLists.append(item)
+                    }
+                
+            }
+            
+            self.allLists = tempLists
+            self.tableView.reloadData()
+        })
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return items.count
+        return allLists.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,11 +123,11 @@ class allListsTableViewController: UITableViewController {
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "List", for: indexPath)
-
-        // Configure the cell...
-        let item = items[indexPath.row]
-        cell.textLabel?.text = item.name
+       let cell = tableView.dequeueReusableCell(withIdentifier: "List", for: indexPath) as! ListTableViewCell
+        let lists: Lists
+        lists = allLists[indexPath.row]
+        
+        cell.listLab.text = lists.name
         return cell
     }
    

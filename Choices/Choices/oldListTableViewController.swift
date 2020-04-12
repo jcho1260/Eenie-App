@@ -10,6 +10,28 @@ import UIKit
 import FirebaseDatabase
 import Firebase
 
+class OldChoiceTableViewCell: UITableViewCell {
+
+    
+    @IBOutlet weak var choiceLab: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    func set(choice:Choices){
+        choiceLab.text = choice.text
+    }
+
+}
+
 class oldListTableViewController: UITableViewController {
 
      var textField: UITextField!
@@ -103,7 +125,7 @@ class oldListTableViewController: UITableViewController {
 
         
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "choice", for: indexPath) as! ChoiceTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "choice", for: indexPath) as! OldChoiceTableViewCell
             cell.set(choice: allChoices[indexPath.row])
             return cell
         }
