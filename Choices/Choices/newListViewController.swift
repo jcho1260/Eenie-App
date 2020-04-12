@@ -36,12 +36,14 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     var textField: UITextField!
-    var refChoices: DatabaseReference!
+    var refChoices: DatabaseReference?
     
     @IBOutlet weak var textChoice: UITextField!
+    
     @IBAction func buttonAddChoice(_ sender: UIButton) {
         addChoice()
     }
+    
     @IBOutlet weak var tableChoices: UITableView!
     
     var allChoices = [Choices]()
@@ -51,11 +53,16 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        refChoices = Database.database().reference().child("choices")
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(showSaveUserAlertController))
-        refChoices.observe(.value, with: {(snapshot) in
+        
+        //        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(showSaveUserAlertController))
+        
+        //firebase data reference
+        refChoices = Database.database().reference()
+        //retreve choices
+        refChoices?.child("choices").observe(.value, with: {(snapshot) in
+            //code to execute when data changes
             var tempChoices = [Choices]()
-            
+            //take data and add to tempChoices array
             for child in snapshot.children{
                 if let childSnapshot = child as? DataSnapshot,
                     let dict = childSnapshot.value as? [String:Any],
@@ -125,13 +132,13 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func addChoice(){
-        let ref = refChoices.childByAutoId()
+        let ref = refChoices?.childByAutoId()
         if let newItem = self.textChoice.text, newItem != "" {
             let choiceObject = [
-                "id": ref.key,
+                "id": ref?.key,
                 "text": newItem
             ]
-            ref.setValue(choiceObject)
+            ref?.setValue(choiceObject)
         //                    self.tableView.reloadData()
         }
         
