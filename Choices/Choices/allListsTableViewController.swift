@@ -75,7 +75,7 @@ class allListsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ref = Database.database().reference()
+        observeLists()
         
         //ref.child("newList").observeEventType
         // Uncomment the following line to preserve selection between presentations
@@ -126,7 +126,6 @@ class allListsTableViewController: UITableViewController {
        let cell = tableView.dequeueReusableCell(withIdentifier: "List", for: indexPath) as! ListTableViewCell
         let lists: Lists
         lists = allLists[indexPath.row]
-        
         cell.listLab.text = lists.name
         return cell
     }
