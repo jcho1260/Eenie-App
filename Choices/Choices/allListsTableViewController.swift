@@ -7,11 +7,13 @@
 //
 
 import UIKit
-import CoreData
+import Firebase
+import FirebaseDatabase
 
 class allListsTableViewController: UITableViewController {
 
     var items = [Items]()
+    
     
 //    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -19,7 +21,10 @@ class allListsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let ref = Database.database().reference()
+        
+        //ref.child("newList").observeEventType
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
