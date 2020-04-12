@@ -8,7 +8,6 @@ target 'Choices' do
   # Pods for Choices
   pod 'Firebase/Analytics'
   pod 'Firebase/Core'
-  pod 'Crashlytics'
   pod 'Firebase/Auth'
 
 end		
