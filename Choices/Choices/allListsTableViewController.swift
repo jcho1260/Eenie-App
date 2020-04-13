@@ -13,6 +13,7 @@ import FirebaseDatabase
 class ListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var listLab: UILabel!
+    var listDetails: Lists!
     
     
     override func awakeFromNib() {
@@ -32,6 +33,7 @@ class allListsTableViewController: UITableViewController {
 
     var allLists = [Lists]()
     var textField: UITextField!
+    var newList: [String:Any]?
     
     @IBAction func newListButton(_ sender: UIBarButtonItem) {
         let choiceRef = Database.database().reference().child("lists").childByAutoId()
@@ -51,8 +53,9 @@ class allListsTableViewController: UITableViewController {
             if let newItem = self.textField.text, newItem != "" {
                 let choiceObject = [
                     "id": choiceRef.key,
-                    "text": newItem
+                    "name": newItem
                 ]
+                self.newList = choiceObject
                 choiceRef.setValue(choiceObject, withCompletionBlock: { error, ref in
                     if error == nil {
                         self.dismiss(animated: true, completion: nil)
@@ -108,6 +111,28 @@ class allListsTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
     }
+    
+    // MARK: - Navigation
+
+       // In a storyboard-based application, you will often want to do a little preparation before navigation
+        //send Lists object to new list VC so that choices can be added to Lists node in database
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           // Get the new view controller using segue.destination.
+           // Pass the selected object to the new view controller.
+            if(segue.identifier == "newListViewController"){
+                let displayVC = segue.destination as! newListViewController
+                displayVC.listInfo = newList
+            }
+            if(segue.identifier == "oldListViewController"){
+                let displayTVC = segue.destination as! oldListTableViewController
+                let myRow = tableView!.indexPathForSelectedRow
+                let myCurrCell = tableView!.cellForRow(at: myRow!) as! ListTableViewCell
+                
+                // set the destVC variables from the selected row
+                displayTVC.listInfo = (myCurrCell.listDetails)!
+        }
+            
+       }
 
     // MARK: - Table view data source
 
@@ -127,6 +152,7 @@ class allListsTableViewController: UITableViewController {
         let lists: Lists
         lists = allLists[indexPath.row]
         cell.listLab.text = lists.name
+        cell.listDetails = lists
         return cell
     }
    
@@ -166,14 +192,8 @@ class allListsTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+   
+    
 
 }
