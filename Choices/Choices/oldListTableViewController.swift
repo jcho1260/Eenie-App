@@ -53,7 +53,7 @@ class oldListTableViewController: UITableViewController {
         
         
         func observeChoices(){
-            let choiceRef = Database.database().reference().child("choices")
+            let choiceRef = Database.database().reference().child("lists").child(listInfo.id).child("choices")
             
             choiceRef.observe(.value, with: {snapshot in
                 
@@ -78,7 +78,7 @@ class oldListTableViewController: UITableViewController {
         }
 
         @objc public func showAddUserAlertController() {
-            let choiceRef = Database.database().reference().child("choices").childByAutoId()
+            let choiceRef = Database.database().reference().child("lists").child(listInfo.id).child("choices").childByAutoId()
             
             let alertCtrl = UIAlertController(title: "Add Choice", message: "Add a new choice to the list", preferredStyle: .alert)
 
