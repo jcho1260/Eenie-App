@@ -36,7 +36,7 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     var textField: UITextField!
-    var refChoices: DatabaseReference?
+    var refChoices: DatabaseReference!
     
     @IBOutlet weak var textChoice: UITextField!
     
@@ -58,8 +58,9 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         //firebase data reference
         refChoices = Database.database().reference()
+        
         //retreve choices
-        refChoices?.child("choices").observe(.value, with: {(snapshot) in
+        refChoices.child("choices").observe(.value, with: {(snapshot) in
             //code to execute when data changes
             var tempChoices = [Choices]()
             //take data and add to tempChoices array
@@ -132,13 +133,13 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func addChoice(){
-        let ref = refChoices?.childByAutoId()
+        let ref = refChoices.childByAutoId()
         if let newItem = self.textChoice.text, newItem != "" {
             let choiceObject = [
-                "id": ref?.key,
+                "id": ref.key,
                 "text": newItem
             ]
-            ref?.setValue(choiceObject)
+            ref.setValue(choiceObject)
         //                    self.tableView.reloadData()
         }
         
