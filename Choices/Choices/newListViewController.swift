@@ -15,6 +15,8 @@ class ChoiceTableViewCell: UITableViewCell {
     @IBOutlet weak var choiceText: UILabel!
     
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -37,6 +39,8 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var textField: UITextField!
     var refChoices: DatabaseReference!
+    
+    var listInfo: [String:Any]?
     
     @IBOutlet weak var textChoice: UITextField!
     

@@ -32,6 +32,7 @@ class allListsTableViewController: UITableViewController {
 
     var allLists = [Lists]()
     var textField: UITextField!
+    var newList: [String:Any]?
     
     @IBAction func newListButton(_ sender: UIBarButtonItem) {
         let choiceRef = Database.database().reference().child("lists").childByAutoId()
@@ -53,6 +54,7 @@ class allListsTableViewController: UITableViewController {
                     "id": choiceRef.key,
                     "text": newItem
                 ]
+                self.newList = choiceObject
                 choiceRef.setValue(choiceObject, withCompletionBlock: { error, ref in
                     if error == nil {
                         self.dismiss(animated: true, completion: nil)
@@ -108,6 +110,20 @@ class allListsTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
     }
+    
+    // MARK: - Navigation
+
+       // In a storyboard-based application, you will often want to do a little preparation before navigation
+        //send Lists object to new list VC so that choices can be added to Lists node in database
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           // Get the new view controller using segue.destination.
+           // Pass the selected object to the new view controller.
+        
+            if(segue.identifier == "newListViewController"){
+                let displayVC = segue.destination as! newListViewController
+                displayVC.listInfo = newList
+        }
+       }
 
     // MARK: - Table view data source
 
@@ -166,14 +182,8 @@ class allListsTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+   
+    
 
 }
