@@ -63,8 +63,8 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         //firebase data reference
         refChoices = Database.database().reference()
         
-        //retreve choices
-        refChoices.child("choices").observe(.value, with: {(snapshot) in
+        //retreve choices from listID
+        refChoices.child("lists").child(listInfo?["id"] as! String).observe(.value, with: {(snapshot) in
             //code to execute when data changes
             var tempChoices = [Choices]()
             //take data and add to tempChoices array
@@ -86,6 +86,34 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
             
         })
     }
+    
+    func addChoice(){
+        let ref = refChoices.child("lists").child(listInfo?["id"] as! String).child("choices").childByAutoId()
+        if let newItem = self.textChoice.text, newItem != "" {
+            let choiceObject = [
+                "id": ref.key,
+                "text": newItem
+            ]
+            ref.setValue(choiceObject)
+        //                    self.tableView.reloadData()
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allChoices.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "choices", for: indexPath) as! ChoiceTableViewCell
+        let choices: Choices
+        choices = allChoices[indexPath.row]
+        
+        cell.choiceText.text = choices.text
+        return cell
+    }
+    
+    
     
 //   @objc public func showSaveUserAlertController() {
 //       let choiceRef = Database.database().reference().child("lists").childByAutoId()
@@ -123,31 +151,7 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
 //       present(alertCtrl, animated: true, completion: nil)
 //   }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allChoices.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "choices", for: indexPath) as! ChoiceTableViewCell
-        let choices: Choices
-        choices = allChoices[indexPath.row]
-        
-        cell.choiceText.text = choices.text
-        return cell 
-    }
-    
-    func addChoice(){
-        let ref = refChoices.childByAutoId()
-        if let newItem = self.textChoice.text, newItem != "" {
-            let choiceObject = [
-                "id": ref.key,
-                "text": newItem
-            ]
-            ref.setValue(choiceObject)
-        //                    self.tableView.reloadData()
-        }
-        
-    }
     
 
     /*

@@ -13,6 +13,7 @@ import FirebaseDatabase
 class ListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var listLab: UILabel!
+    var listDetails: Lists!
     
     
     override func awakeFromNib() {
@@ -52,7 +53,7 @@ class allListsTableViewController: UITableViewController {
             if let newItem = self.textField.text, newItem != "" {
                 let choiceObject = [
                     "id": choiceRef.key,
-                    "text": newItem
+                    "name": newItem
                 ]
                 self.newList = choiceObject
                 choiceRef.setValue(choiceObject, withCompletionBlock: { error, ref in
@@ -118,11 +119,19 @@ class allListsTableViewController: UITableViewController {
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            // Get the new view controller using segue.destination.
            // Pass the selected object to the new view controller.
-        
             if(segue.identifier == "newListViewController"){
                 let displayVC = segue.destination as! newListViewController
                 displayVC.listInfo = newList
+            }
+            if(segue.identifier == "oldListViewController"){
+                let displayTVC = segue.destination as! oldListTableViewController
+                let myRow = tableView!.indexPathForSelectedRow
+                let myCurrCell = tableView!.cellForRow(at: myRow!) as! ListTableViewCell
+                
+                // set the destVC variables from the selected row
+                displayTVC.listInfo = (myCurrCell.listDetails)!
         }
+            
        }
 
     // MARK: - Table view data source
@@ -143,6 +152,7 @@ class allListsTableViewController: UITableViewController {
         let lists: Lists
         lists = allLists[indexPath.row]
         cell.listLab.text = lists.name
+        cell.listDetails = lists
         return cell
     }
    

@@ -34,8 +34,9 @@ class OldChoiceTableViewCell: UITableViewCell {
 
 class oldListTableViewController: UITableViewController {
 
-     var textField: UITextField!
-        var allChoices = [Choices]()
+    var textField: UITextField!
+    var allChoices = [Choices]()
+    var listInfo: Lists!
         
         override func viewDidLoad() {
             super.viewDidLoad()
