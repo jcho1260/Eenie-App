@@ -55,6 +55,7 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = listInfo?["name"] as! String
         
         // Do any additional setup after loading the view.
         
