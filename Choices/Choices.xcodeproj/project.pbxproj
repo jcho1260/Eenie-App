@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E36068F2445326000D974F1 /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36068E2445326000D974F1 /* PhotoUploadViewController.swift */; };
 		4EC60DE72432389D00FD165D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC60DE62432389D00FD165D /* AppDelegate.swift */; };
 		4EC60DE92432389E00FD165D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC60DE82432389D00FD165D /* SceneDelegate.swift */; };
 		4EC60DEB2432389E00FD165D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC60DEA2432389E00FD165D /* ViewController.swift */; };
@@ -27,7 +26,6 @@
 
 /* Begin PBXFileReference section */
 		0DD26AC64DC804A2FEB7DE69 /* Pods-Choices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Choices.release.xcconfig"; path = "Target Support Files/Pods-Choices/Pods-Choices.release.xcconfig"; sourceTree = "<group>"; };
-		4E36068E2445326000D974F1 /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
 		4EC60DE32432389D00FD165D /* Choices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Choices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC60DE62432389D00FD165D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EC60DE82432389D00FD165D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 				4EC60DE82432389D00FD165D /* SceneDelegate.swift */,
 				4EC60DEA2432389E00FD165D /* ViewController.swift */,
 				4EC60DEC2432389E00FD165D /* Main.storyboard */,
-				4E36068E2445326000D974F1 /* PhotoUploadViewController.swift */,
 				51CCA86F2442E1A800E354B4 /* oldListTableViewController.swift */,
 				51CCA8752442FB8200E354B4 /* newListViewController.swift */,
 				51CCA8712442ECDE00E354B4 /* Choices.swift */,
@@ -237,7 +234,6 @@
 				E0F96E012442AFA10013FA75 /* CreateAccountViewController.swift in Sources */,
 				4EC60DEB2432389E00FD165D /* ViewController.swift in Sources */,
 				4EC60DE72432389D00FD165D /* AppDelegate.swift in Sources */,
-				4E36068F2445326000D974F1 /* PhotoUploadViewController.swift in Sources */,
 				51CCA8782443210D00E354B4 /* Lists.swift in Sources */,
 				51CCA8702442E1A800E354B4 /* oldListTableViewController.swift in Sources */,
 				51395AD6243D9FA40021EE01 /* allLists.xcdatamodeld in Sources */,
