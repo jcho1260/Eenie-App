@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import CodableFirebase
 
 class ListTableViewCell: UITableViewCell {
 
@@ -34,9 +35,11 @@ class allListsTableViewController: UITableViewController {
     var allLists = [Lists]()
     var textField: UITextField!
     var newList: [String:Any]?
+    var listRef: DatabaseReference?
+    var choiceRef: DatabaseReference?
     
     @IBAction func newListButton(_ sender: UIBarButtonItem) {
-        let choiceRef = Database.database().reference().child("lists").childByAutoId()
+        choiceRef = Database.database().reference().child("lists").childByAutoId()
         
         let alertController = UIAlertController(title: "New List", message: "Create a name to save list as", preferredStyle: .alert)
         alertController.addTextField { (textField) in
@@ -52,11 +55,11 @@ class allListsTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Add", style: .default, handler: { action in
             if let newItem = self.textField.text, newItem != "" {
                 let choiceObject = [
-                    "id": choiceRef.key,
+                    "id": self.choiceRef?.key,
                     "name": newItem
                 ]
                 self.newList = choiceObject
-                choiceRef.setValue(choiceObject, withCompletionBlock: { error, ref in
+                self.choiceRef?.setValue(choiceObject, withCompletionBlock: { error, ref in
                     if error == nil {
                         self.dismiss(animated: true, completion: nil)
                     }
@@ -90,18 +93,18 @@ class allListsTableViewController: UITableViewController {
     
     //getting all the lists and showing in table view
     func observeLists(){
-        let listRef = Database.database().reference().child("lists")
+        listRef = Database.database().reference().child("lists")
         
-        listRef.observe(.value, with: {snapshot in
+        listRef?.observe(.value, with: {snapshot in
             
             var tempLists = [Lists]()
             
             for child in snapshot.children{
                 if let childSnapshot = child as? DataSnapshot,
                     let dict = childSnapshot.value as? [String:Any],
-                    let text = dict["name"] as? String,
-                    let choices = dict["name"] as? [Choices]{
-                    let item = Lists(id: childSnapshot.key, name: text, choices:choices)
+                    let name = dict["name"] as? String,
+                    let choices = dict["choices"] as? [Choices]{
+                    let item = Lists(id: childSnapshot.key, name: name, choices:choices)
                     tempLists.append(item)
                     }
                 
