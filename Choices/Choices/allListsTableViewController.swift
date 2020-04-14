@@ -34,6 +34,7 @@ class allListsTableViewController: UITableViewController {
     var allLists = [Lists]()
     var textField: UITextField!
     var newList: [String:Any]?
+    var listRef: DatabaseReference?
     
     @IBAction func newListButton(_ sender: UIBarButtonItem) {
         let choiceRef = Database.database().reference().child("lists").childByAutoId()
@@ -90,18 +91,18 @@ class allListsTableViewController: UITableViewController {
     
     //getting all the lists and showing in table view
     func observeLists(){
-        let listRef = Database.database().reference().child("lists")
+        listRef = Database.database().reference().child("lists")
         
-        listRef.observe(.value, with: {snapshot in
+        listRef?.observe(.value, with: {snapshot in
             
             var tempLists = [Lists]()
             
             for child in snapshot.children{
                 if let childSnapshot = child as? DataSnapshot,
                     let dict = childSnapshot.value as? [String:Any],
-                    let text = dict["name"] as? String,
-                    let choices = dict["name"] as? [Choices]{
-                    let item = Lists(id: childSnapshot.key, name: text, choices:choices)
+                    let name = dict["name"] as? String,
+                    let choices = dict["choices"] as? [Choices]{
+                    let item = Lists(id: childSnapshot.key, name: name, choices:choices)
                     tempLists.append(item)
                     }
                 
