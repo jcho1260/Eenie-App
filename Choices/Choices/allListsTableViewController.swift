@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import CodableFirebase
 
 class ListTableViewCell: UITableViewCell {
 
@@ -35,9 +36,10 @@ class allListsTableViewController: UITableViewController {
     var textField: UITextField!
     var newList: [String:Any]?
     var listRef: DatabaseReference?
+    var choiceRef: DatabaseReference?
     
     @IBAction func newListButton(_ sender: UIBarButtonItem) {
-        let choiceRef = Database.database().reference().child("lists").childByAutoId()
+        choiceRef = Database.database().reference().child("lists").childByAutoId()
         
         let alertController = UIAlertController(title: "New List", message: "Create a name to save list as", preferredStyle: .alert)
         alertController.addTextField { (textField) in
@@ -53,11 +55,11 @@ class allListsTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Add", style: .default, handler: { action in
             if let newItem = self.textField.text, newItem != "" {
                 let choiceObject = [
-                    "id": choiceRef.key,
+                    "id": self.choiceRef?.key,
                     "name": newItem
                 ]
                 self.newList = choiceObject
-                choiceRef.setValue(choiceObject, withCompletionBlock: { error, ref in
+                self.choiceRef?.setValue(choiceObject, withCompletionBlock: { error, ref in
                     if error == nil {
                         self.dismiss(animated: true, completion: nil)
                     }
