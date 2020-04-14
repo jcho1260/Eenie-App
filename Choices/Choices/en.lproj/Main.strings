@@ -1,0 +1,54 @@
+
+/* Class = "UITextField"; placeholder = "Email "; ObjectID = "2ca-l4-j1I"; */
+"2ca-l4-j1I.placeholder" = "Email ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3hx-BM-Jc7"; */
+"3hx-BM-Jc7.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Add Choice"; ObjectID = "DNJ-b5-7cg"; */
+"DNJ-b5-7cg.placeholder" = "Add Choice";
+
+/* Class = "UITextField"; placeholder = "Email "; ObjectID = "GKj-gy-xDR"; */
+"GKj-gy-xDR.placeholder" = "Email ";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "ND9-fk-OdY"; */
+"ND9-fk-OdY.normalTitle" = "Back";
+
+/* Class = "UILabel"; text = "Sign in"; ObjectID = "OIR-hn-2pC"; */
+"OIR-hn-2pC.text" = "Sign in";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "QOh-OK-UrG"; */
+"QOh-OK-UrG.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Create Account"; ObjectID = "SOe-bh-89l"; */
+"SOe-bh-89l.normalTitle" = "Create Account";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "XdB-os-Jz7"; */
+"XdB-os-Jz7.placeholder" = "Password";
+
+/* Class = "UINavigationItem"; title = "All Lists"; ObjectID = "YVg-KZ-B63"; */
+"YVg-KZ-B63.title" = "All Lists";
+
+/* Class = "UITableViewController"; title = "All Lists"; ObjectID = "Z4i-sO-UJ3"; */
+"Z4i-sO-UJ3.title" = "All Lists";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "ZEu-OF-kdb"; */
+"ZEu-OF-kdb.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Example List 1"; ObjectID = "b8R-hl-wdY"; */
+"b8R-hl-wdY.text" = "Example List 1";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "eAL-Yq-bWb"; */
+"eAL-Yq-bWb.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Create Account "; ObjectID = "nR5-PJ-l17"; */
+"nR5-PJ-l17.normalTitle" = "Create Account ";
+
+/* Class = "UIButton"; normalTitle = "Add to List"; ObjectID = "nbR-0r-JZt"; */
+"nbR-0r-JZt.normalTitle" = "Add to List";
+
+/* Class = "UIButton"; normalTitle = "Login "; ObjectID = "qjW-TG-6HE"; */
+"qjW-TG-6HE.normalTitle" = "Login ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "saR-g7-En8"; */
+"saR-g7-En8.text" = "Label";

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E859ED32446068000B00A3E /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E859ED22446068000B00A3E /* PhotoUploadViewController.swift */; };
 		4EC60DE72432389D00FD165D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC60DE62432389D00FD165D /* AppDelegate.swift */; };
 		4EC60DE92432389E00FD165D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC60DE82432389D00FD165D /* SceneDelegate.swift */; };
 		4EC60DEB2432389E00FD165D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC60DEA2432389E00FD165D /* ViewController.swift */; };
@@ -26,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		0DD26AC64DC804A2FEB7DE69 /* Pods-Choices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Choices.release.xcconfig"; path = "Target Support Files/Pods-Choices/Pods-Choices.release.xcconfig"; sourceTree = "<group>"; };
+		4E859ED1244604FE00B00A3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		4E859ED22446068000B00A3E /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
 		4EC60DE32432389D00FD165D /* Choices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Choices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC60DE62432389D00FD165D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EC60DE82432389D00FD165D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 		4EC60DE52432389D00FD165D /* Choices */ = {
 			isa = PBXGroup;
 			children = (
+				4E859ED22446068000B00A3E /* PhotoUploadViewController.swift */,
 				4EC60DE62432389D00FD165D /* AppDelegate.swift */,
 				4EC60DE82432389D00FD165D /* SceneDelegate.swift */,
 				4EC60DEA2432389E00FD165D /* ViewController.swift */,
@@ -234,6 +238,7 @@
 				E0F96E012442AFA10013FA75 /* CreateAccountViewController.swift in Sources */,
 				4EC60DEB2432389E00FD165D /* ViewController.swift in Sources */,
 				4EC60DE72432389D00FD165D /* AppDelegate.swift in Sources */,
+				4E859ED32446068000B00A3E /* PhotoUploadViewController.swift in Sources */,
 				51CCA8782443210D00E354B4 /* Lists.swift in Sources */,
 				51CCA8702442E1A800E354B4 /* oldListTableViewController.swift in Sources */,
 				51395AD6243D9FA40021EE01 /* allLists.xcdatamodeld in Sources */,
@@ -251,6 +256,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4EC60DED2432389E00FD165D /* Base */,
+				4E859ED1244604FE00B00A3E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
