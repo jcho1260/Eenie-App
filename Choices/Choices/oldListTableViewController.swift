@@ -26,21 +26,34 @@ class OldChoiceTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func set(choice:Choices){
-        choiceLab.text = choice.text
+    func set(choice:String){
+        choiceLab.text = choice
     }
 
 }
 
 class oldListTableViewController: UITableViewController {
 
+    struct List: Codable {
+           var choices: [Choice]
+           var name: String
+           var id: String
+       }
+       
+    struct Choice: Codable {
+           var text: String
+           var id: String
+    }
+    
     var textField: UITextField!
-    var allChoices = [Choices]()
-    var listInfo: Lists!
+    var allChoices = [Choice]()
+    var listID: String!
+    var listName: String!
+    var choiceRef: DatabaseReference?
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            self.title = listInfo.name
+            self.title = listName
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddUserAlertController))
             observeChoices()
             // Uncomment the following line to preserve selection between presentations
@@ -54,23 +67,33 @@ class oldListTableViewController: UITableViewController {
         
         
         func observeChoices(){
-            let choiceRef = Database.database().reference().child("lists").child(listInfo.id).child("choices")
+            choiceRef = Database.database().reference().child("lists").child(listID).child("choices")
             
-            choiceRef.observe(.value, with: {snapshot in
+            choiceRef?.observe(.value, with: {snapshot in
                 
-                var tempChoices = [Choices]()
+                var tempChoices = [Choice]()
                 
-                for child in snapshot.children{
-                    if let childSnapshot = child as? DataSnapshot,
-                        let dict = childSnapshot.value as? [String:Any],
-                        let text = dict["text"] as? String,
-                        let id = dict["id"] as? String {
-                        
-                            let item = Choices(id: id, text: text)
-                            tempChoices.append(item)
+                guard let value = snapshot.value as? [String: Any] else { return }
+                        do {
+                            let jsonData = try JSONSerialization.data(withJSONObject: value, options: [])
+                            let choiceItem = try JSONDecoder().decode(Choice.self, from: jsonData)
+                            // let item = Lists(id: listItem.id, name: listItem.name, choices: listItem.choices)
+                            tempChoices.append(choiceItem)
+                        } catch let error {
+                            print(error)
                         }
-                    
-                }
+                
+//                for child in snapshot.children{
+//                    if let childSnapshot = child as? DataSnapshot,
+//                        let dict = childSnapshot.value as? [String:Any],
+//                        let text = dict["text"] as? String,
+//                        let id = dict["id"] as? String {
+//
+//                            let item = Choices(id: id, text: text)
+//                            tempChoices.append(item)
+//                        }
+//
+//                }
                 
                 self.allChoices = tempChoices
                 self.tableView.reloadData()
@@ -79,7 +102,7 @@ class oldListTableViewController: UITableViewController {
         }
 
         @objc public func showAddUserAlertController() {
-            let choiceRef = Database.database().reference().child("lists").child(listInfo.id).child("choices").childByAutoId()
+            let choiceRef = Database.database().reference().child("lists").child(listID).child("choices").childByAutoId()
             
             let alertCtrl = UIAlertController(title: "Add Choice", message: "Add a new choice to the list", preferredStyle: .alert)
 
@@ -128,7 +151,7 @@ class oldListTableViewController: UITableViewController {
         
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "choice", for: indexPath) as! OldChoiceTableViewCell
-            cell.set(choice: allChoices[indexPath.row])
+            cell.set(choice: allChoices[indexPath.row].text)
             return cell
         }
         

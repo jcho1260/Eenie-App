@@ -11,9 +11,15 @@ import Foundation
 class Lists{
     var id: String
     var name: String
-    var choices: [Choices]
+    var choices: [Choice]
     
-    init(id:String, name:String, choices:[Choices]){
+    
+    struct Choice: Codable {
+        var text: String
+        var id: String
+    }
+    
+    init(id:String, name:String, choices:[Choice]){
         self.id = id
         self.name = name
         self.choices = choices

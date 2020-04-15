@@ -89,13 +89,13 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func addChoice(){
-        let ref = refChoices.child("lists").child(listInfo?["id"] as! String).child("choices").childByAutoId()
+        refChoices = refChoices.child("lists").child(listInfo?["id"] as! String).child("choices").childByAutoId()
         if let newItem = self.textChoice.text, newItem != "" {
             let choiceObject = [
-                "id": ref.key,
+                "id": refChoices.key,
                 "text": newItem
             ]
-            ref.setValue(choiceObject)
+            refChoices.setValue(choiceObject)
         //                    self.tableView.reloadData()
         }
         
