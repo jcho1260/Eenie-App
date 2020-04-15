@@ -116,6 +116,8 @@ class allListsTableViewController: UITableViewController {
     func observeLists(){
         let userID = self.user?.uid
         
+        //if userID is nil
+        
         listRef = Database.database().reference().child("users").child(userID!).child("lists")
         print("here is the list start: \n")
         listRef?.observe(.value, with: {snapshot in
