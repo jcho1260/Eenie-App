@@ -44,14 +44,14 @@ class allListsTableViewController: UITableViewController {
     var choiceRef: DatabaseReference?
     
     struct List: Codable {
-        var choices: [Choice]
-        var name: String
-        var id: String
+        var choices: [String:Choice]? = nil
+        var id: String? = nil
+        var name: String? = nil
     }
     
     struct Choice: Codable {
-        var text: String
         var id: String
+        var text: String
     }
     
     @IBAction func newListButton(_ sender: UIBarButtonItem) {
@@ -110,7 +110,7 @@ class allListsTableViewController: UITableViewController {
     //getting all the lists and showing in table view
     func observeLists(){
         listRef = Database.database().reference().child("lists")
-        
+        print("here is the list start: \n")
         listRef?.observe(.value, with: {snapshot in
             
             var tempLists = [List]()
@@ -118,9 +118,14 @@ class allListsTableViewController: UITableViewController {
             guard let value = snapshot.value as? [String: Any] else { return }
                    do {
                         let jsonData = try JSONSerialization.data(withJSONObject: value, options: [])
-                        let listItem = try JSONDecoder().decode(List.self, from: jsonData)
+                        print(jsonData)
+                    
+                    let listItem = try JSONDecoder().decode([String:List].self, from: jsonData)
+                    for item in listItem{
+                        tempLists.append(item.value)
+                    }
                        // let item = Lists(id: listItem.id, name: listItem.name, choices: listItem.choices)
-                        tempLists.append(listItem)
+                        
                    } catch let error {
                        print(error)
                    }
