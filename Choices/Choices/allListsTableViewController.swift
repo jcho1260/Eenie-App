@@ -14,7 +14,8 @@ import CodableFirebase
 class ListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var listLab: UILabel!
-    var listDetails: Lists!
+    var listID: String!
+    var listName: String!
     
     
     override func awakeFromNib() {
@@ -30,13 +31,28 @@ class ListTableViewCell: UITableViewCell {
 
 }
 
+
+
+
+
 class allListsTableViewController: UITableViewController {
 
-    var allLists = [Lists]()
+    var allLists = [List]()
     var textField: UITextField!
     var newList: [String:Any]?
     var listRef: DatabaseReference?
     var choiceRef: DatabaseReference?
+    
+    struct List: Codable {
+        var choices: [Choice]
+        var name: String
+        var id: String
+    }
+    
+    struct Choice: Codable {
+        var text: String
+        var id: String
+    }
     
     @IBAction func newListButton(_ sender: UIBarButtonItem) {
         choiceRef = Database.database().reference().child("lists").childByAutoId()
@@ -97,19 +113,33 @@ class allListsTableViewController: UITableViewController {
         
         listRef?.observe(.value, with: {snapshot in
             
-            var tempLists = [Lists]()
+            var tempLists = [List]()
             
-            for child in snapshot.children{
-                if let childSnapshot = child as? DataSnapshot,
-                    let dict = childSnapshot.value as? [String:Any],
-                    let name = dict["name"] as? String,
-                    let choices = dict["choices"] as? [Choices]{
-                    let item = Lists(id: childSnapshot.key, name: name, choices:choices)
-                    tempLists.append(item)
-                    }
-                
-            }
+            guard let value = snapshot.value as? [String: Any] else { return }
+                   do {
+                        let jsonData = try JSONSerialization.data(withJSONObject: value, options: [])
+                        let listItem = try JSONDecoder().decode(List.self, from: jsonData)
+                       // let item = Lists(id: listItem.id, name: listItem.name, choices: listItem.choices)
+                        tempLists.append(listItem)
+                   } catch let error {
+                       print(error)
+                   }
             
+//            for child in snapshot.children{
+//                if let childSnapshot = child as? DataSnapshot,
+//                    let dict = childSnapshot.value as? [String:Any],
+//                    let jsonData = try JSONSerialization.data(withJSONObject: value, options: []),
+//                    let choiceItem = try JSONDecoder().decode(List.self, from: jsonData),
+//                    //let name = dict["name"] as? String,
+//                    //let choices = dict["choices"] as? [Choices]
+//                    let name = choiceItem.name,
+//                    let choices = choiceItem.choices{
+//                    let item = Lists(id: childSnapshot.key, name: name, choices:choices)
+//                    tempLists.append(item)
+//                    }
+//
+//            }
+        
             self.allLists = tempLists
             self.tableView.reloadData()
         })
@@ -132,7 +162,8 @@ class allListsTableViewController: UITableViewController {
                 let myCurrCell = tableView!.cellForRow(at: myRow!) as! ListTableViewCell
                 
                 // set the destVC variables from the selected row
-                displayTVC.listInfo = (myCurrCell.listDetails)!
+                displayTVC.listID = myCurrCell.listID
+                displayTVC.listName = myCurrCell.listName
         }
             
        }
@@ -152,10 +183,11 @@ class allListsTableViewController: UITableViewController {
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "List", for: indexPath) as! ListTableViewCell
-        let lists: Lists
+        let lists: List
         lists = allLists[indexPath.row]
         cell.listLab.text = lists.name
-        cell.listDetails = lists
+        cell.listID = lists.id
+        cell.listName = lists.name
         return cell
     }
    
