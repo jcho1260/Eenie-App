@@ -50,10 +50,12 @@ class oldListTableViewController: UITableViewController {
     var listID: String!
     var listName: String!
     var choiceRef: DatabaseReference?
+    var user = Auth.auth().currentUser
         
         override func viewDidLoad() {
             super.viewDidLoad()
             self.title = listName
+            print(listName)
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddUserAlertController))
             observeChoices()
             // Uncomment the following line to preserve selection between presentations
@@ -67,7 +69,8 @@ class oldListTableViewController: UITableViewController {
         
         
         func observeChoices(){
-            choiceRef = Database.database().reference().child("lists").child(listID).child("choices")
+            let userID = self.user?.uid
+            choiceRef = Database.database().reference().child("users").child(userID!).child("lists").child(listID).child("choices")
             
             choiceRef?.observe(.value, with: {snapshot in
                 

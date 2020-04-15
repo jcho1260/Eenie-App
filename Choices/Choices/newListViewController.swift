@@ -14,9 +14,6 @@ class ChoiceTableViewCell: UITableViewCell {
 
     @IBOutlet weak var choiceText: UILabel!
     
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,14 +25,11 @@ class ChoiceTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func set(choice:Choices){
-        choiceText.text = choice.text
-    }
-
 }
 
 class newListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var user = Auth.auth().currentUser
     
     var textField: UITextField!
     var refChoices: DatabaseReference!
@@ -50,7 +44,12 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableChoices: UITableView!
     
-    var allChoices = [Choices]()
+    var allChoices = [Choice]()
+    
+    struct Choice: Codable {
+        var id: String
+        var text: String
+    }
     
     
     override func viewDidLoad() {
@@ -63,28 +62,49 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         //firebase data reference
         refChoices = Database.database().reference()
+        reloadChoices()
+        
+        
+    }
+    
+    func reloadChoices(){
+        let userID = user?.uid
         
         //retreve choices from listID
-        refChoices.child("lists").child(listInfo?["id"] as! String).observe(.value, with: {(snapshot) in
-            //code to execute when data changes
-            var tempChoices = [Choices]()
-            //take data and add to tempChoices array
-            for child in snapshot.children{
-                if let childSnapshot = child as? DataSnapshot,
-                    let dict = childSnapshot.value as? [String:Any],
-                    let text = dict["text"] as? String,
-                    let id = dict["id"] as? String {
+        refChoices.child("users").child(userID!).child("lists").child(listInfo?["id"] as! String).child("choices").observe(.value, with: {(snapshot) in
+                    //code to execute when data changes
+            var tempChoices = [Choice]()
+                    //take data and add to tempChoices array
                     
-                        let item = Choices(id: id, text: text)
-                        tempChoices.append(item)
-                    
-                    }
-                
+            guard let value = snapshot.value as? [String: Any] else { return }
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: value, options: [])
+                     
+                let choiceItem = try JSONDecoder().decode([String:Choice].self, from: jsonData)
+                for item in choiceItem{
+                    tempChoices.append(item.value)
+                }
+                         
+            } catch let error {
+                print(error)
             }
-            
+                    
+        //            for child in snapshot.children{
+        //                if let childSnapshot = child as? DataSnapshot,
+        //                    let dict = childSnapshot.value as? [String:Any],
+        //                    let text = dict["text"] as? String,
+        //                    let id = dict["id"] as? String {
+        //
+        //                        let item = Choices(id: id, text: text)
+        //                        tempChoices.append(item)
+        //
+        //                    }
+        //
+        //            }
+                    
             self.allChoices = tempChoices
             self.tableChoices.reloadData()
-            
+                    
         })
     }
     
@@ -98,6 +118,8 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
             refChoices.setValue(choiceObject)
         //                    self.tableView.reloadData()
         }
+        refChoices = Database.database().reference()
+        //reloadChoices()
         
     }
     
@@ -107,9 +129,8 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "choices", for: indexPath) as! ChoiceTableViewCell
-        let choices: Choices
+        let choices: Choice
         choices = allChoices[indexPath.row]
-        
         cell.choiceText.text = choices.text
         return cell
     }

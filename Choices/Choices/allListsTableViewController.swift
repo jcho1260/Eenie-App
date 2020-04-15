@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import CodableFirebase
+import FirebaseAuth
 
 class ListTableViewCell: UITableViewCell {
 
@@ -42,9 +43,10 @@ class allListsTableViewController: UITableViewController {
     var newList: [String:Any]?
     var listRef: DatabaseReference?
     var choiceRef: DatabaseReference?
+    var user = Auth.auth().currentUser
     
     struct List: Codable {
-        var choices: [String:Choice]? = nil
+        var choices: [String:Choice]? = [String:Choice]()
         var id: String? = nil
         var name: String? = nil
     }
@@ -55,7 +57,9 @@ class allListsTableViewController: UITableViewController {
     }
     
     @IBAction func newListButton(_ sender: UIBarButtonItem) {
-        choiceRef = Database.database().reference().child("lists").childByAutoId()
+        let userID = self.user?.uid
+        
+        choiceRef = Database.database().reference().child("users").child(userID!).child("lists").childByAutoId()
         
         let alertController = UIAlertController(title: "New List", message: "Create a name to save list as", preferredStyle: .alert)
         alertController.addTextField { (textField) in
@@ -72,8 +76,9 @@ class allListsTableViewController: UITableViewController {
             if let newItem = self.textField.text, newItem != "" {
                 let choiceObject = [
                     "id": self.choiceRef?.key,
-                    "name": newItem
-                ]
+                    "name": newItem,
+                    "choices": [String:Choice]()
+                ] as [String: Any]
                 self.newList = choiceObject
                 self.choiceRef?.setValue(choiceObject, withCompletionBlock: { error, ref in
                     if error == nil {
@@ -109,7 +114,9 @@ class allListsTableViewController: UITableViewController {
     
     //getting all the lists and showing in table view
     func observeLists(){
-        listRef = Database.database().reference().child("lists")
+        let userID = self.user?.uid
+        
+        listRef = Database.database().reference().child("users").child(userID!).child("lists")
         print("here is the list start: \n")
         listRef?.observe(.value, with: {snapshot in
             
@@ -157,24 +164,27 @@ class allListsTableViewController: UITableViewController {
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            // Get the new view controller using segue.destination.
            // Pass the selected object to the new view controller.
-            if(segue.identifier == "newListViewController"){
+        print("segue id:", segue.identifier)
+        if(segue.identifier == "newListViewController"){
+                print("segue id:", segue.identifier)
                 let displayVC = segue.destination as! newListViewController
                 displayVC.listInfo = newList
             }
-            if(segue.identifier == "oldListViewController"){
+            else if(segue.identifier == "oldListViewController"){
+            print("segue id:", segue.identifier)
                 let displayTVC = segue.destination as! oldListTableViewController
                 let myRow = tableView!.indexPathForSelectedRow
                 let myCurrCell = tableView!.cellForRow(at: myRow!) as! ListTableViewCell
-                
                 // set the destVC variables from the selected row
-                displayTVC.listID = myCurrCell.listID
-                displayTVC.listName = myCurrCell.listName
+                displayTVC.listID = myCurrCell.listID!
+                displayTVC.listName = myCurrCell.listName!
         }
             
        }
 
     // MARK: - Table view data source
-
+   
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
