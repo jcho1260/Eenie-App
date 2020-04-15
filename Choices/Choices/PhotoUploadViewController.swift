@@ -8,10 +8,29 @@
 
 import UIKit
 
-class PhotoUploadViewController: UIViewController {
+class PhotoUploadViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
   
+  @IBOutlet weak var myImageView: UIImageView!
+  @IBAction func importImage(_ sender: Any) {
+    
+    let image = UIImagePickerController()
+    
+    image.delegate = self
+    image.sourceType = UIImagePickerController.SourceType.photoLibrary
+    image.allowsEditing = false
+    
+    self.present(image, animated: true) {
+      //after it is complete
+    }
+  }
   
-
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+      myImageView.image = image
+           }
+    self.dismiss(animated:true, completion: nil)
+  }
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
