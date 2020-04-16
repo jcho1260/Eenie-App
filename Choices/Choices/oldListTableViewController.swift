@@ -56,7 +56,6 @@ class oldListTableViewController: UITableViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             self.title = listName
-            print(listName)
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddUserAlertController))
             observeChoices()
             // Uncomment the following line to preserve selection between presentations
