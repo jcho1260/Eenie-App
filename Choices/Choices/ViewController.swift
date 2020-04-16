@@ -19,9 +19,24 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
-    
+
     
   }
+    //Below lets us make sure that the user stays logged when they open and close the app
+    
+    // Under the if statements we are checking whether the user is signed in
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Check if the user is already authenicated. If so, go ahead and log in
+        // Auth.auth().currenterUser = currentUser is an optional variable
+        if let user = Auth.auth().currentUser {
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "NavController")
+            UIApplication.shared.keyWindow?.rootViewController = viewController
+                        //self.performSegue(withIdentifier: "SignInSegueWay", sender: nil)
+        }
+    }
 
 
     @IBAction func loginPushed(_ sender: Any) {
@@ -60,7 +75,11 @@ class ViewController: UIViewController {
               print("There was error! \(err)")
               return
            }
-            self.performSegue(withIdentifier: "SignInSegueWay", sender: nil)
+            
+        // Same logic from lines 33-36 below. Here we are actually changing the main page as the root controller to the user (nav controller)
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "NavController")
+            UIApplication.shared.keyWindow?.rootViewController = viewController
               // TODO: Created user was successful. Go to next screen because they have already been authenticated.
         }
     }

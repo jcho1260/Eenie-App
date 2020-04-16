@@ -21,7 +21,7 @@ class ChoiceTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -47,6 +47,11 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         addChoice()
     }
     
+    //Once Jin's part work this will randomly choice from the "allchoice" list
+    @IBAction func RandomlySelect(_ sender: Any) {
+        let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
+        showAlert(title: "Choice Selected", message: "Randomly selected \(randomlyChosenChoice.text)")
+    }
     @IBOutlet weak var tableChoices: UITableView!
     
     var allChoices = [Choice]()
@@ -67,7 +72,8 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         //firebase data reference
         reloadChoices()
-        
+        self.tableChoices.delegate = self
+        self.tableChoices.dataSource = self
         
     }
     
@@ -87,11 +93,12 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
                      
                 let choiceItem = try JSONDecoder().decode([String:Choice].self, from: jsonData)
                 for item in choiceItem{
+                    
                     tempChoices.append(item.value)
                 }
                          
             } catch let error {
-                print(error)
+                print("There was an error getting the choices \(error)")
             }
             self.allChoices = tempChoices
             self.tableChoices.reloadData()

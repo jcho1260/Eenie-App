@@ -103,7 +103,7 @@ class allListsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         observeLists()
-        
+        self.modalPresentationStyle = .overFullScreen
         //ref.child("newList").observeEventType
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
