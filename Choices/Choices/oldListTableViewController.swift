@@ -50,6 +50,7 @@ class oldListTableViewController: UITableViewController {
     var listID: String!
     var listName: String!
     var choiceRef: DatabaseReference?
+    var newChoiceRef: DatabaseReference?
     var user = Auth.auth().currentUser
         
         override func viewDidLoad() {
@@ -79,9 +80,12 @@ class oldListTableViewController: UITableViewController {
                 guard let value = snapshot.value as? [String: Any] else { return }
                         do {
                             let jsonData = try JSONSerialization.data(withJSONObject: value, options: [])
-                            let choiceItem = try JSONDecoder().decode(Choice.self, from: jsonData)
+                            let choiceItem = try JSONDecoder().decode([String:Choice].self, from: jsonData)
                             // let item = Lists(id: listItem.id, name: listItem.name, choices: listItem.choices)
-                            tempChoices.append(choiceItem)
+                            for item in choiceItem{
+                                tempChoices.append(item.value)
+                            }
+                            
                         } catch let error {
                             print(error)
                         }
@@ -102,10 +106,12 @@ class oldListTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
             )
+            
         }
 
         @objc public func showAddUserAlertController() {
-            let choiceRef = Database.database().reference().child("lists").child(listID).child("choices").childByAutoId()
+            let userID = self.user?.uid
+            newChoiceRef = Database.database().reference().child("users").child(userID!).child("lists").child(listID).child("choices").childByAutoId()
             
             let alertCtrl = UIAlertController(title: "Add Choice", message: "Add a new choice to the list", preferredStyle: .alert)
 
@@ -123,16 +129,16 @@ class oldListTableViewController: UITableViewController {
             alertCtrl.addAction(UIAlertAction(title: "Add", style: .default, handler: { action in
                 if let newItem = self.textField.text, newItem != "" {
                     let choiceObject = [
-                        "id": choiceRef.key,
+                        "id": self.newChoiceRef?.key,
                         "text": newItem
                     ]
-                    choiceRef.setValue(choiceObject, withCompletionBlock: { error, ref in
-                        if error == nil {
-                            self.dismiss(animated: true, completion: nil)
-                        }
-                        else{
-                            
-                        }
+                    self.newChoiceRef?.setValue(choiceObject, withCompletionBlock: { error, ref in
+//                        if error == nil {
+//                            self.dismiss(animated: true, completion: nil)
+//                        }
+//                        else{
+//                            
+//                        }
                     })
 //                    self.tableView.reloadData()
                 }

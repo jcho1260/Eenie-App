@@ -81,9 +81,9 @@ class allListsTableViewController: UITableViewController {
                 ] as [String: Any]
                 self.newList = choiceObject
                 self.choiceRef?.setValue(choiceObject, withCompletionBlock: { error, ref in
-                    if error == nil {
-                        self.dismiss(animated: true, completion: nil)
-                    }
+//                    if error == nil {
+//                        self.dismiss(animated: true, completion: nil)
+//                    }
                 })
                 
                 self.performSegue(withIdentifier: "newListViewController", sender: self)
@@ -115,6 +115,8 @@ class allListsTableViewController: UITableViewController {
     //getting all the lists and showing in table view
     func observeLists(){
         let userID = self.user?.uid
+        
+        //if userID is nil
         
         listRef = Database.database().reference().child("users").child(userID!).child("lists")
         print("here is the list start: \n")
