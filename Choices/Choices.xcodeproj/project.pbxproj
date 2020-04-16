@@ -22,6 +22,7 @@
 		51CCA8762442FB8200E354B4 /* newListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CCA8752442FB8200E354B4 /* newListViewController.swift */; };
 		51CCA8782443210D00E354B4 /* Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CCA8772443210D00E354B4 /* Lists.swift */; };
 		BB0950D464EB14C0C2BC9279 /* Pods_Choices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592E18C38D76C24967F55679 /* Pods_Choices.framework */; };
+		E0C109C52447FDD30018B024 /* RandomChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C109C42447FDD30018B024 /* RandomChoice.swift */; };
 		E0F96E012442AFA10013FA75 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F96E002442AFA10013FA75 /* CreateAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		51CCA8772443210D00E354B4 /* Lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lists.swift; sourceTree = "<group>"; };
 		592E18C38D76C24967F55679 /* Pods_Choices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Choices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3BADE517A307CDC8B822B9 /* Pods-Choices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Choices.debug.xcconfig"; path = "Target Support Files/Pods-Choices/Pods-Choices.debug.xcconfig"; sourceTree = "<group>"; };
+		E0C109C42447FDD30018B024 /* RandomChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomChoice.swift; sourceTree = "<group>"; };
 		E0F96E002442AFA10013FA75 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 				51CCA86B2441891500E354B4 /* GoogleService-Info.plist */,
 				4EC60DF42432389F00FD165D /* Info.plist */,
 				E0F96E002442AFA10013FA75 /* CreateAccountViewController.swift */,
+				E0C109C42447FDD30018B024 /* RandomChoice.swift */,
 			);
 			path = Choices;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				51395AD6243D9FA40021EE01 /* allLists.xcdatamodeld in Sources */,
 				4EC60DE92432389E00FD165D /* SceneDelegate.swift in Sources */,
 				51CCA8722442ECDE00E354B4 /* Choices.swift in Sources */,
+				E0C109C52447FDD30018B024 /* RandomChoice.swift in Sources */,
 				51395AD3243D997D0021EE01 /* allListsTableViewController.swift in Sources */,
 				51CCA8762442FB8200E354B4 /* newListViewController.swift in Sources */,
 			);
