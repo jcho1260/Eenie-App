@@ -133,12 +133,12 @@ class oldListTableViewController: UITableViewController {
                         "text": newItem
                     ]
                     self.newChoiceRef?.setValue(choiceObject, withCompletionBlock: { error, ref in
-                        if error == nil {
-                            self.dismiss(animated: true, completion: nil)
-                        }
-                        else{
-                            
-                        }
+//                        if error == nil {
+//                            self.dismiss(animated: true, completion: nil)
+//                        }
+//                        else{
+//                            
+//                        }
                     })
 //                    self.tableView.reloadData()
                 }

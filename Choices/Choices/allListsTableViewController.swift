@@ -81,9 +81,9 @@ class allListsTableViewController: UITableViewController {
                 ] as [String: Any]
                 self.newList = choiceObject
                 self.choiceRef?.setValue(choiceObject, withCompletionBlock: { error, ref in
-                    if error == nil {
-                        self.dismiss(animated: true, completion: nil)
-                    }
+//                    if error == nil {
+//                        self.dismiss(animated: true, completion: nil)
+//                    }
                 })
                 
                 self.performSegue(withIdentifier: "newListViewController", sender: self)
