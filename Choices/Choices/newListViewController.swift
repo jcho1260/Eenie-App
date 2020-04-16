@@ -25,6 +25,10 @@ class ChoiceTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func set(choice:String){
+        choiceText.text = choice
+    }
+    
 }
 
 class newListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -32,7 +36,8 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     var user = Auth.auth().currentUser
     
     var textField: UITextField!
-    var refChoices: DatabaseReference!
+    var refChoices: DatabaseReference?
+    var addChoicesRef: DatabaseReference?
     
     var listInfo: [String:Any]?
     
@@ -66,7 +71,6 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         //        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(showSaveUserAlertController))
         
         //firebase data reference
-        refChoices = Database.database().reference()
         reloadChoices()
         self.tableChoices.delegate = self
         self.tableChoices.dataSource = self
@@ -76,8 +80,9 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     func reloadChoices(){
         let userID = user?.uid
         
+        refChoices = Database.database().reference().child("users").child(userID!).child("lists").child(listInfo?["id"] as! String).child("choices")
         //retreve choices from listID
-        refChoices.child("users").child(userID!).child("lists").child(listInfo?["id"] as! String).child("choices").observe(.value, with: {(snapshot) in
+        refChoices?.observe(.value, with: {(snapshot) in
                     //code to execute when data changes
             var tempChoices = [Choice]()
                     //take data and add to tempChoices array
@@ -95,20 +100,6 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
             } catch let error {
                 print("There was an error getting the choices \(error)")
             }
-                    
-        //            for child in snapshot.children{
-        //                if let childSnapshot = child as? DataSnapshot,
-        //                    let dict = childSnapshot.value as? [String:Any],
-        //                    let text = dict["text"] as? String,
-        //                    let id = dict["id"] as? String {
-        //
-        //                        let item = Choices(id: id, text: text)
-        //                        tempChoices.append(item)
-        //
-        //                    }
-        //
-        //            }
-                    
             self.allChoices = tempChoices
             self.tableChoices.reloadData()
                     
@@ -116,17 +107,19 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func addChoice(){
-        refChoices = refChoices.child("lists").child(listInfo?["id"] as! String).child("choices").childByAutoId()
+        let userID = user?.uid
+        
+        addChoicesRef = Database.database().reference().child("users").child(userID!).child("lists").child(listInfo?["id"] as! String).child("choices").childByAutoId()
+        
         if let newItem = self.textChoice.text, newItem != "" {
             let choiceObject = [
-                "id": refChoices.key,
+                "id": addChoicesRef?.key,
                 "text": newItem
             ]
-            refChoices.setValue(choiceObject)
+            addChoicesRef?.setValue(choiceObject)
         //                    self.tableView.reloadData()
         }
-        refChoices = Database.database().reference()
-        // reloadChoices()
+        //addChoicesRef = Database.database().reference()
         //reloadChoices()
         
     }
@@ -137,9 +130,10 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "choices", for: indexPath) as! ChoiceTableViewCell
-        let choices: Choice
-        choices = allChoices[indexPath.row]
-        cell.choiceText.text = choices.text
+        
+        cell.set(choice: allChoices[indexPath.row].text)
+        //choices = allChoices[indexPath.row]
+        //cell.choiceText.text = choices.text
         return cell
     }
     
