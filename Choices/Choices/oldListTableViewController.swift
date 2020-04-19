@@ -53,11 +53,23 @@ class oldListTableViewController: UITableViewController {
     var newChoiceRef: DatabaseReference?
     var delRef: DatabaseReference?
     var user = Auth.auth().currentUser
-        
+    
+    
+    @objc func chooseFromList() {
+        let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
+         let alertController = UIAlertController(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Back to All Lists", style: .default, handler: {action in
+            self.navigationController?.popViewController(animated: true)
+            }))
+         present(alertController, animated: true, completion: nil)
+    }
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             self.title = listName
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddUserAlertController))
+            let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddUserAlertController))
+            let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(oldListTableViewController.chooseFromList))
+            navigationItem.rightBarButtonItems = [addButton, doneButton]
             observeChoices()
             // Uncomment the following line to preserve selection between presentations
             // self.clearsSelectionOnViewWillAppear = false
@@ -72,7 +84,6 @@ class oldListTableViewController: UITableViewController {
         func observeChoices(){
             let userID = self.user?.uid
             choiceRef = Database.database().reference().child("users").child(userID!).child("lists").child(listID).child("choices")
-            
             choiceRef?.observe(.value, with: {snapshot in
                 
                 var tempChoices = [Choice]()
@@ -89,25 +100,17 @@ class oldListTableViewController: UITableViewController {
                         } catch let error {
                             print(error)
                         }
-                
-//                for child in snapshot.children{
-//                    if let childSnapshot = child as? DataSnapshot,
-//                        let dict = childSnapshot.value as? [String:Any],
-//                        let text = dict["text"] as? String,
-//                        let id = dict["id"] as? String {
-//
-//                            let item = Choices(id: id, text: text)
-//                            tempChoices.append(item)
-//                        }
-//
-//                }
-                
                 self.allChoices = tempChoices
                 self.tableView.reloadData()
             }
             )
-            
         }
+    //Once Jin's part work this will randomly choice from the "allchoice" list
+    @objc func RandomlySelect(_ sender: Any) {
+        let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
+        showAlert(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)")
+        self.performSegue(withIdentifier: "afterRandomSelection", sender: self)
+    }
 
         @objc public func showAddUserAlertController() {
             let userID = self.user?.uid

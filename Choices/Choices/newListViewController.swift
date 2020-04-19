@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 class ChoiceTableViewCell: UITableViewCell {
 
+    //variables
     @IBOutlet weak var choiceText: UILabel!
     
     override func awakeFromNib() {
@@ -33,7 +34,13 @@ class ChoiceTableViewCell: UITableViewCell {
 
 class newListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //variables
     var user = Auth.auth().currentUser
+    var textField: UITextField!
+    var refChoices: DatabaseReference?
+    var addChoicesRef: DatabaseReference?
+    var listInfo: [String:Any]?
+    @IBOutlet weak var textChoice: UITextField!
     
     @IBAction func saveList(_ sender: Any) {
          let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
@@ -43,14 +50,8 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
             }))
          present(alertController, animated: true, completion: nil)
     }
-    var textField: UITextField!
-    var refChoices: DatabaseReference?
-    var addChoicesRef: DatabaseReference?
     
-    var listInfo: [String:Any]?
-    
-    @IBOutlet weak var textChoice: UITextField!
-    
+    //adding a new choice
     @IBAction func buttonAddChoice(_ sender: UIButton) {
         addChoice()
     }
@@ -60,8 +61,8 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
         showAlert(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)")
         self.performSegue(withIdentifier: "afterRandomSelection", sender: self)
-        
     }
+    
     @IBOutlet weak var tableChoices: UITableView!
     
     var allChoices = [Choice]()
