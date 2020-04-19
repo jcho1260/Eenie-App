@@ -56,13 +56,6 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         addChoice()
     }
     
-    //Once Jin's part work this will randomly choice from the "allchoice" list
-    @IBAction func RandomlySelect(_ sender: Any) {
-        let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
-        showAlert(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)")
-        self.performSegue(withIdentifier: "afterRandomSelection", sender: self)
-    }
-    
     @IBOutlet weak var tableChoices: UITableView!
     
     var allChoices = [Choice]()
@@ -79,7 +72,7 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // Do any additional setup after loading the view.
         
-        //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(showSaveUserAlertController))
+        
         
         //firebase data reference
         reloadChoices()

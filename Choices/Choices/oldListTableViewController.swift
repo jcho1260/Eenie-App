@@ -105,12 +105,7 @@ class oldListTableViewController: UITableViewController {
             }
             )
         }
-    //Once Jin's part work this will randomly choice from the "allchoice" list
-    @objc func RandomlySelect(_ sender: Any) {
-        let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
-        showAlert(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)")
-        self.performSegue(withIdentifier: "afterRandomSelection", sender: self)
-    }
+    
 
         @objc public func showAddUserAlertController() {
             let userID = self.user?.uid

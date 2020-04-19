@@ -229,14 +229,6 @@
                                     <action selector="buttonAddChoice:" destination="IHw-fF-3Vj" eventType="touchUpInside" id="WXT-kc-WGN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZJ-VL-9j8">
-                                <rect key="frame" x="306" y="143" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select One"/>
-                                <connections>
-                                    <action selector="RandomlySelect:" destination="IHw-fF-3Vj" eventType="touchUpInside" id="eQJ-0F-zna"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="TMr-4c-G5S"/>
