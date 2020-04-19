@@ -72,8 +72,8 @@ class allListsTableViewController: UITableViewController {
         // Add cancel button to alert controller
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
-        // "Add" button with callback
-        alertController.addAction(UIAlertAction(title: "Add", style: .default, handler: { action in
+        // "Manual text input" button with callback
+        alertController.addAction(UIAlertAction(title: "Manual Text Input", style: .default, handler: { action in
             if let newItem = self.textField.text, newItem != "" {
                 let choiceObject = [
                     "id": self.choiceRef?.key,
@@ -81,23 +81,16 @@ class allListsTableViewController: UITableViewController {
                     "choices": [String:Choice]()
                 ] as [String: Any]
                 self.newList = choiceObject
-                self.choiceRef?.setValue(choiceObject, withCompletionBlock: { error, ref in
-//                    if error == nil {
-//                        self.dismiss(animated: true, completion: nil)
-//                    }
-                })
-                
+                self.choiceRef?.setValue(choiceObject, withCompletionBlock: { error, ref in})
                 self.performSegue(withIdentifier: "newListViewController", sender: self)
-                
-        //                    self.tableView.reloadData()
             }
         }))
         present(alertController, animated: true, completion: nil)
         
+        //"Scan in input" button
+        alertController.addAction(UIAlertAction(title: "Scan-in Text", style: .default, handler: nil))
     }
-    
-//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+ 
     
     
     override func viewDidLoad() {
