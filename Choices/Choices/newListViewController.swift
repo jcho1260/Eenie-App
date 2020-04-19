@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 class ChoiceTableViewCell: UITableViewCell {
 
+    //variables
     @IBOutlet weak var choiceText: UILabel!
     
     override func awakeFromNib() {
@@ -29,24 +30,28 @@ class ChoiceTableViewCell: UITableViewCell {
 
 class newListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //variables
     var user = Auth.auth().currentUser
-    
     var textField: UITextField!
-    var refChoices: DatabaseReference!
-    
+    var refChoices: DatabaseReference?
+    var addChoicesRef: DatabaseReference?
     var listInfo: [String:Any]?
-    
     @IBOutlet weak var textChoice: UITextField!
     
+    @IBAction func saveList(_ sender: Any) {
+         let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
+         let alertController = UIAlertController(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Back to All Lists", style: .default, handler: {action in
+            self.navigationController?.popViewController(animated: true)
+            }))
+         present(alertController, animated: true, completion: nil)
+    }
+    
+    //adding a new choice
     @IBAction func buttonAddChoice(_ sender: UIButton) {
         addChoice()
     }
     
-    //Once Jin's part work this will randomly choice from the "allchoice" list
-    @IBAction func RandomlySelect(_ sender: Any) {
-        let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
-        showAlert(title: "Choice Selected", message: "Randomly selected \(randomlyChosenChoice.text)")
-    }
     @IBOutlet weak var tableChoices: UITableView!
     
     var allChoices = [Choice]()
@@ -63,10 +68,10 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // Do any additional setup after loading the view.
         
-        //        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(showSaveUserAlertController))
+        
         
         //firebase data reference
-        refChoices = Database.database().reference()
+        
         reloadChoices()
         self.tableChoices.delegate = self
         self.tableChoices.dataSource = self
@@ -77,7 +82,9 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         let userID = user?.uid
         
         //retreve choices from listID
-        refChoices.child("users").child(userID!).child("lists").child(listInfo?["id"] as! String).child("choices").observe(.value, with: {(snapshot) in
+       refChoices = Database.database().reference().child("users").child(userID!).child("lists").child(listInfo?["id"] as! String).child("choices")
+        //retreve choices from listID
+        refChoices?.observe(.value, with: {(snapshot) in
                     //code to execute when data changes
             var tempChoices = [Choice]()
                     //take data and add to tempChoices array
@@ -116,17 +123,20 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func addChoice(){
-        refChoices = refChoices.child("lists").child(listInfo?["id"] as! String).child("choices").childByAutoId()
+        let userID = user?.uid
+        addChoicesRef = Database.database().reference().child("users").child(userID!).child("lists").child(listInfo?["id"] as! String).child("choices").childByAutoId()
         if let newItem = self.textChoice.text, newItem != "" {
             let choiceObject = [
-                "id": refChoices.key,
+                "id": addChoicesRef?.key,
                 "text": newItem
             ]
-            refChoices.setValue(choiceObject)
+            addChoicesRef?.setValue(choiceObject)
         //                    self.tableView.reloadData()
         }
-        refChoices = Database.database().reference()
-        // reloadChoices()
+
+        textChoice.text = ""
+        //addChoicesRef = Database.database().reference()
+
         //reloadChoices()
         
     }

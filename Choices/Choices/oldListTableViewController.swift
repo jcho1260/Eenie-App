@@ -51,13 +51,27 @@ class oldListTableViewController: UITableViewController {
     var listName: String!
     var choiceRef: DatabaseReference?
     var newChoiceRef: DatabaseReference?
+    var delRef: DatabaseReference?
     var user = Auth.auth().currentUser
-        
+    
+    
+    @objc func chooseFromList() {
+        let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
+         let alertController = UIAlertController(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Back to All Lists", style: .default, handler: {action in
+            self.navigationController?.popViewController(animated: true)
+            }))
+         present(alertController, animated: true, completion: nil)
+    }
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             self.title = listName
-            print(listName)
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddUserAlertController))
+
+            let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddUserAlertController))
+            let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(oldListTableViewController.chooseFromList))
+            navigationItem.rightBarButtonItems = [addButton, doneButton]
+
             observeChoices()
             // Uncomment the following line to preserve selection between presentations
             // self.clearsSelectionOnViewWillAppear = false
@@ -72,7 +86,6 @@ class oldListTableViewController: UITableViewController {
         func observeChoices(){
             let userID = self.user?.uid
             choiceRef = Database.database().reference().child("users").child(userID!).child("lists").child(listID).child("choices")
-            
             choiceRef?.observe(.value, with: {snapshot in
                 
                 var tempChoices = [Choice]()
@@ -89,25 +102,12 @@ class oldListTableViewController: UITableViewController {
                         } catch let error {
                             print(error)
                         }
-                
-//                for child in snapshot.children{
-//                    if let childSnapshot = child as? DataSnapshot,
-//                        let dict = childSnapshot.value as? [String:Any],
-//                        let text = dict["text"] as? String,
-//                        let id = dict["id"] as? String {
-//
-//                            let item = Choices(id: id, text: text)
-//                            tempChoices.append(item)
-//                        }
-//
-//                }
-                
                 self.allChoices = tempChoices
                 self.tableView.reloadData()
             }
             )
-            
         }
+    
 
         @objc public func showAddUserAlertController() {
             let userID = self.user?.uid
@@ -163,6 +163,17 @@ class oldListTableViewController: UITableViewController {
             cell.set(choice: allChoices[indexPath.row].text)
             return cell
         }
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            let userID = self.user?.uid
+            let choiceID = allChoices[indexPath.row].id
+            delRef = Database.database().reference().child("users").child(userID!).child("lists").child(listID).child("choices").child(choiceID)
+            delRef?.removeValue()
+        }
+    }
         
 
         /*
@@ -171,19 +182,7 @@ class oldListTableViewController: UITableViewController {
             // Return false if you do not want the specified item to be editable.
             return true
         }
-        */
-
         
-        // Override to support editing the table view.
-    //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    //        if editingStyle == .delete {
-    //            self.users.remove(at: indexPath.row)
-    //            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-    //        }
-    //    }
-        
-
-        /*
         // Override to support rearranging the table view.
         override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
