@@ -32,10 +32,6 @@ class ListTableViewCell: UITableViewCell {
 
 }
 
-
-
-
-
 class allListsTableViewController: UITableViewController {
 
     var allLists = [List]()
@@ -55,6 +51,13 @@ class allListsTableViewController: UITableViewController {
     struct Choice: Codable {
         var id: String
         var text: String
+    }
+    
+    @IBAction func logOutButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "loginScreen")
+        self.present(vc, animated: true)
+        try! Auth.auth().signOut()
     }
     
     @IBAction func newListButton(_ sender: UIBarButtonItem) {
@@ -95,15 +98,8 @@ class allListsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         observeLists()
         self.modalPresentationStyle = .overFullScreen
-        //ref.child("newList").observeEventType
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     //getting all the lists and showing in table view
