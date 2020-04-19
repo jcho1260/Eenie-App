@@ -35,6 +35,14 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var user = Auth.auth().currentUser
     
+    @IBAction func saveList(_ sender: Any) {
+         let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
+         let alertController = UIAlertController(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Back to All Lists", style: .default, handler: {action in
+            self.navigationController?.popViewController(animated: true)
+            }))
+         present(alertController, animated: true, completion: nil)
+    }
     var textField: UITextField!
     var refChoices: DatabaseReference?
     var addChoicesRef: DatabaseReference?
@@ -50,7 +58,9 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     //Once Jin's part work this will randomly choice from the "allchoice" list
     @IBAction func RandomlySelect(_ sender: Any) {
         let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
-        showAlert(title: "Choice Selected", message: "Randomly selected \(randomlyChosenChoice.text)")
+        showAlert(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)")
+        self.performSegue(withIdentifier: "afterRandomSelection", sender: self)
+        
     }
     @IBOutlet weak var tableChoices: UITableView!
     
@@ -68,7 +78,7 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // Do any additional setup after loading the view.
         
-        //        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(showSaveUserAlertController))
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(showSaveUserAlertController))
         
         //firebase data reference
         reloadChoices()
@@ -119,6 +129,7 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
             addChoicesRef?.setValue(choiceObject)
         //                    self.tableView.reloadData()
         }
+        textChoice.text = ""
         //addChoicesRef = Database.database().reference()
         //reloadChoices()
         

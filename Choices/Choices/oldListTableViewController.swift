@@ -51,6 +51,7 @@ class oldListTableViewController: UITableViewController {
     var listName: String!
     var choiceRef: DatabaseReference?
     var newChoiceRef: DatabaseReference?
+    var delRef: DatabaseReference?
     var user = Auth.auth().currentUser
         
         override func viewDidLoad() {
@@ -162,6 +163,17 @@ class oldListTableViewController: UITableViewController {
             cell.set(choice: allChoices[indexPath.row].text)
             return cell
         }
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            let userID = self.user?.uid
+            let choiceID = allChoices[indexPath.row].id
+            delRef = Database.database().reference().child("users").child(userID!).child("lists").child(listID).child("choices").child(choiceID)
+            delRef?.removeValue()
+        }
+    }
         
 
         /*
@@ -170,19 +182,7 @@ class oldListTableViewController: UITableViewController {
             // Return false if you do not want the specified item to be editable.
             return true
         }
-        */
-
         
-        // Override to support editing the table view.
-    //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    //        if editingStyle == .delete {
-    //            self.users.remove(at: indexPath.row)
-    //            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-    //        }
-    //    }
-        
-
-        /*
         // Override to support rearranging the table view.
         override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 

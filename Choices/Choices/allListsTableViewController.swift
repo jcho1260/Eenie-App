@@ -43,6 +43,7 @@ class allListsTableViewController: UITableViewController {
     var newList: [String:Any]?
     var listRef: DatabaseReference?
     var choiceRef: DatabaseReference?
+    var delRef: DatabaseReference?
     var user = Auth.auth().currentUser
     
     struct List: Codable {
@@ -116,8 +117,6 @@ class allListsTableViewController: UITableViewController {
     func observeLists(){
         let userID = self.user?.uid
         
-        //if userID is nil
-        
         listRef = Database.database().reference().child("users").child(userID!).child("lists")
         print("here is the list start: \n")
         listRef?.observe(.value, with: {snapshot in
@@ -133,31 +132,16 @@ class allListsTableViewController: UITableViewController {
                     for item in listItem{
                         tempLists.append(item.value)
                     }
-                       // let item = Lists(id: listItem.id, name: listItem.name, choices: listItem.choices)
-                        
                    } catch let error {
                        print(error)
                    }
-            
-//            for child in snapshot.children{
-//                if let childSnapshot = child as? DataSnapshot,
-//                    let dict = childSnapshot.value as? [String:Any],
-//                    let jsonData = try JSONSerialization.data(withJSONObject: value, options: []),
-//                    let choiceItem = try JSONDecoder().decode(List.self, from: jsonData),
-//                    //let name = dict["name"] as? String,
-//                    //let choices = dict["choices"] as? [Choices]
-//                    let name = choiceItem.name,
-//                    let choices = choiceItem.choices{
-//                    let item = Lists(id: childSnapshot.key, name: name, choices:choices)
-//                    tempLists.append(item)
-//                    }
-//
-//            }
-        
+
             self.allLists = tempLists
             self.tableView.reloadData()
         })
     }
+    
+    
     
     // MARK: - Navigation
 
@@ -207,6 +191,18 @@ class allListsTableViewController: UITableViewController {
         cell.listName = lists.name
         return cell
     }
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            let userID = self.user?.uid
+            let listID = allLists[indexPath.row].id
+            delRef = Database.database().reference().child("users").child(userID!).child("lists").child(listID!)
+            delRef?.removeValue()
+            
+        }
+    }
    
 
     /*
@@ -217,17 +213,9 @@ class allListsTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+    
+    
+    
 
     /*
     // Override to support rearranging the table view.
