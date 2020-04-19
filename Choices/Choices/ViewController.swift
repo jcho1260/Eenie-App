@@ -11,7 +11,6 @@ import Firebase
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet weak var passwordTf: UITextField!
     @IBOutlet weak var emailTf: UITextField!
     var db: OpaquePointer?
