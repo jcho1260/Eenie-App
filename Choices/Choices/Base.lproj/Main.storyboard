@@ -254,25 +254,21 @@
             </objects>
             <point key="canvasLocation" x="1841" y="862"/>
         </scene>
-        <!--Photo Upload View Controller-->
+        <!--Random8 View Controller-->
         <scene sceneID="EkE-ev-a8K">
             <objects>
-                <viewController id="wgb-Tb-D2k" customClass="PhotoUploadViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wgb-Tb-D2k" customClass="Random8ViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QUF-eI-pUn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ehP-mX-sXs">
-                                <rect key="frame" x="0.0" y="104" width="414" height="441"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAL-Yq-bWb">
-                                <rect key="frame" x="0.0" y="539" width="414" height="75"/>
+                                <rect key="frame" x="77" y="482" width="260" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.95526859460000002" green="0.75615654480000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="upload from photo library">
+                                        <fragment content="generate answer">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <font key="NSFont" size="25" name="Arial-Black"/>
@@ -282,16 +278,35 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="importImage:" destination="wgb-Tb-D2k" eventType="touchUpInside" id="IEM-yR-1Hw"/>
+                                    <action selector="showRandomAnswer:" destination="wgb-Tb-D2k" eventType="touchUpInside" id="FkF-1c-erz"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ask me a yes or no question and I will generate an answer for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4g-6Z-HMa">
+                                <rect key="frame" x="22" y="371" width="374" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="magic9" translatesAutoresizingMaskIntoConstraints="NO" id="bQs-fv-dG7">
+                                <rect key="frame" x="67" y="72" width="285" height="263"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9l-k2-9En">
+                                <rect key="frame" x="61" y="612" width="293" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="BCY-Tl-mtb"/>
                     </view>
                     <navigationItem key="navigationItem" id="ACr-hm-gmG"/>
                     <connections>
-                        <outlet property="myImageView" destination="ehP-mX-sXs" id="X1w-b5-rBO"/>
+                        <outlet property="myImage" destination="bQs-fv-dG7" id="zg3-7K-N3D"/>
+                        <outlet property="randomAnswer" destination="O9l-k2-9En" id="mL6-7I-86U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C6P-nJ-J75" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -365,4 +380,7 @@
             <point key="canvasLocation" x="966.66666666666674" y="129.91071428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="magic9" width="450" height="480"/>
+    </resources>
 </document>

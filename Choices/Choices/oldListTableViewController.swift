@@ -67,9 +67,11 @@ class oldListTableViewController: UITableViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             self.title = listName
+
             let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddUserAlertController))
             let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(oldListTableViewController.chooseFromList))
             navigationItem.rightBarButtonItems = [addButton, doneButton]
+
             observeChoices()
             // Uncomment the following line to preserve selection between presentations
             // self.clearsSelectionOnViewWillAppear = false

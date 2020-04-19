@@ -30,8 +30,13 @@
             filePath = "Choices/newListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "90"
             endingLineNumber = "90"
+=======
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+>>>>>>> d2794c65ca179f38943a6b9568e6463a879351b1
             landmarkName = "reloadChoices()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +51,13 @@
             filePath = "Choices/newListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "100"
             endingLineNumber = "100"
+=======
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+>>>>>>> d2794c65ca179f38943a6b9568e6463a879351b1
             landmarkName = "reloadChoices()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +72,13 @@
             filePath = "Choices/oldListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "84"
             endingLineNumber = "84"
+=======
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+>>>>>>> d2794c65ca179f38943a6b9568e6463a879351b1
             landmarkName = "observeChoices()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +93,13 @@
             filePath = "Choices/oldListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "73"
             endingLineNumber = "73"
+=======
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+>>>>>>> d2794c65ca179f38943a6b9568e6463a879351b1
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,10 +130,17 @@
             filePath = "Choices/newListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "83"
             endingLineNumber = "83"
             landmarkName = "newListViewController"
             landmarkType = "3">
+=======
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "reloadChoices()"
+            landmarkType = "7">
+>>>>>>> d2794c65ca179f38943a6b9568e6463a879351b1
             <Locations>
                <Location
                   uuid = "752A199A-E381-4C5F-8089-F00876DC043F - 4304623e3f913f0a"
@@ -173,8 +200,13 @@
             filePath = "Choices/newListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "85"
             endingLineNumber = "85"
+=======
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+>>>>>>> d2794c65ca179f38943a6b9568e6463a879351b1
             landmarkName = "reloadChoices()"
             landmarkType = "7">
          </BreakpointContent>
@@ -189,42 +221,15 @@
             filePath = "Choices/newListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "92"
             endingLineNumber = "92"
+=======
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+>>>>>>> d2794c65ca179f38943a6b9568e6463a879351b1
             landmarkName = "reloadChoices()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A94C952A-5F4A-4A13-A133-8DDC757A0035 - ef54c3ca81c03613"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Choices.newListViewController.reloadChoices() -&gt; ()"
-                  moduleName = "Choices"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jincho/Desktop/CS290/transylvania/Choices/Choices/newListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "1814">
-               </Location>
-               <Location
-                  uuid = "A94C952A-5F4A-4A13-A133-8DDC757A0035 - ef54c3ca81c03613"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Choices.newListViewController.reloadChoices() -&gt; ()"
-                  moduleName = "Choices"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jincho/Desktop/CS290/transylvania/Choices/Choices/newListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "2600">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -237,8 +242,13 @@
             filePath = "Choices/oldListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "86"
             endingLineNumber = "86"
+=======
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+>>>>>>> d2794c65ca179f38943a6b9568e6463a879351b1
             landmarkName = "observeChoices()"
             landmarkType = "7">
          </BreakpointContent>
@@ -253,8 +263,13 @@
             filePath = "Choices/oldListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "87"
             endingLineNumber = "87"
+=======
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+>>>>>>> d2794c65ca179f38943a6b9568e6463a879351b1
             landmarkName = "observeChoices()"
             landmarkType = "7">
             <Locations>
@@ -317,12 +332,18 @@
             filePath = "Choices/oldListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "93"
             endingLineNumber = "93"
+=======
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+>>>>>>> d2794c65ca179f38943a6b9568e6463a879351b1
             landmarkName = "observeChoices()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+<<<<<<< HEAD
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
@@ -531,5 +552,7 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+=======
+>>>>>>> d2794c65ca179f38943a6b9568e6463a879351b1
    </Breakpoints>
 </Bucket>
