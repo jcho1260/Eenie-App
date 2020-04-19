@@ -32,10 +32,6 @@ class ListTableViewCell: UITableViewCell {
 
 }
 
-
-
-
-
 class allListsTableViewController: UITableViewController {
 
     var allLists = [List]()
@@ -43,6 +39,7 @@ class allListsTableViewController: UITableViewController {
     var newList: [String:Any]?
     var listRef: DatabaseReference?
     var choiceRef: DatabaseReference?
+    var delRef: DatabaseReference?
     var user = Auth.auth().currentUser
     
     struct List: Codable {
@@ -54,6 +51,13 @@ class allListsTableViewController: UITableViewController {
     struct Choice: Codable {
         var id: String
         var text: String
+    }
+    
+    @IBAction func logOutButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "loginScreen")
+        self.present(vc, animated: true)
+        try! Auth.auth().signOut()
     }
     
     @IBAction func newListButton(_ sender: UIBarButtonItem) {
@@ -71,8 +75,8 @@ class allListsTableViewController: UITableViewController {
         // Add cancel button to alert controller
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
-        // "Add" button with callback
-        alertController.addAction(UIAlertAction(title: "Add", style: .default, handler: { action in
+        // "Manual text input" button with callback
+        alertController.addAction(UIAlertAction(title: "Manual Text Input", style: .default, handler: { action in
             if let newItem = self.textField.text, newItem != "" {
                 let choiceObject = [
                     "id": self.choiceRef?.key,
@@ -80,43 +84,27 @@ class allListsTableViewController: UITableViewController {
                     "choices": [String:Choice]()
                 ] as [String: Any]
                 self.newList = choiceObject
-                self.choiceRef?.setValue(choiceObject, withCompletionBlock: { error, ref in
-//                    if error == nil {
-//                        self.dismiss(animated: true, completion: nil)
-//                    }
-                })
-                
+                self.choiceRef?.setValue(choiceObject, withCompletionBlock: { error, ref in})
                 self.performSegue(withIdentifier: "newListViewController", sender: self)
-                
-        //                    self.tableView.reloadData()
             }
         }))
         present(alertController, animated: true, completion: nil)
         
+        //"Scan in input" button
+        alertController.addAction(UIAlertAction(title: "Scan-in Text", style: .default, handler: nil))
     }
-    
-//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+ 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         observeLists()
         self.modalPresentationStyle = .overFullScreen
-        //ref.child("newList").observeEventType
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     //getting all the lists and showing in table view
     func observeLists(){
         let userID = self.user?.uid
-        
-        //if userID is nil
         
         listRef = Database.database().reference().child("users").child(userID!).child("lists")
         print("here is the list start: \n")
@@ -133,31 +121,16 @@ class allListsTableViewController: UITableViewController {
                     for item in listItem{
                         tempLists.append(item.value)
                     }
-                       // let item = Lists(id: listItem.id, name: listItem.name, choices: listItem.choices)
-                        
                    } catch let error {
                        print(error)
                    }
-            
-//            for child in snapshot.children{
-//                if let childSnapshot = child as? DataSnapshot,
-//                    let dict = childSnapshot.value as? [String:Any],
-//                    let jsonData = try JSONSerialization.data(withJSONObject: value, options: []),
-//                    let choiceItem = try JSONDecoder().decode(List.self, from: jsonData),
-//                    //let name = dict["name"] as? String,
-//                    //let choices = dict["choices"] as? [Choices]
-//                    let name = choiceItem.name,
-//                    let choices = choiceItem.choices{
-//                    let item = Lists(id: childSnapshot.key, name: name, choices:choices)
-//                    tempLists.append(item)
-//                    }
-//
-//            }
-        
+
             self.allLists = tempLists
             self.tableView.reloadData()
         })
     }
+    
+    
     
     // MARK: - Navigation
 
@@ -207,6 +180,18 @@ class allListsTableViewController: UITableViewController {
         cell.listName = lists.name
         return cell
     }
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            let userID = self.user?.uid
+            let listID = allLists[indexPath.row].id
+            delRef = Database.database().reference().child("users").child(userID!).child("lists").child(listID!)
+            delRef?.removeValue()
+            
+        }
+    }
    
 
     /*
@@ -217,17 +202,9 @@ class allListsTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+    
+    
+    
 
     /*
     // Override to support rearranging the table view.
