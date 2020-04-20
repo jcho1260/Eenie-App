@@ -59,7 +59,7 @@ class oldListTableViewController: UITableViewController {
         let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
          let alertController = UIAlertController(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Back to All Lists", style: .default, handler: {action in
-            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popToRootViewController(animated: true)
             }))
          present(alertController, animated: true, completion: nil)
     }

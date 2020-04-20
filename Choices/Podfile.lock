@@ -13,6 +13,27 @@ PODS:
   - Firebase/Database (6.22.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (~> 6.1.4)
+  - Firebase/MLVision (6.22.0):
+    - Firebase/CoreOnly
+    - FirebaseMLVision (~> 0.19.0)
+  - Firebase/MLVisionAutoML (6.22.0):
+    - Firebase/CoreOnly
+    - FirebaseMLVisionAutoML (~> 0.19.0)
+  - Firebase/MLVisionBarcodeModel (6.22.0):
+    - Firebase/CoreOnly
+    - FirebaseMLVisionBarcodeModel (~> 0.19.0)
+  - Firebase/MLVisionFaceModel (6.22.0):
+    - Firebase/CoreOnly
+    - FirebaseMLVisionFaceModel (~> 0.19.0)
+  - Firebase/MLVisionLabelModel (6.22.0):
+    - Firebase/CoreOnly
+    - FirebaseMLVisionLabelModel (~> 0.19.0)
+  - Firebase/MLVisionObjectDetection (6.22.0):
+    - Firebase/CoreOnly
+    - FirebaseMLVisionObjectDetection (~> 0.19.0)
+  - Firebase/MLVisionTextModel (6.22.0):
+    - Firebase/CoreOnly
+    - FirebaseMLVisionTextModel (~> 0.19.0)
   - FirebaseAnalytics (6.4.1):
     - FirebaseCore (~> 6.6)
     - FirebaseInstallations (~> 1.1)
@@ -49,6 +70,50 @@ PODS:
     - FirebaseCore (~> 6.6)
     - GoogleUtilities/UserDefaults (~> 6.5)
     - PromisesObjC (~> 1.2)
+  - FirebaseInstanceID (4.3.3):
+    - FirebaseCore (~> 6.6)
+    - FirebaseInstallations (~> 1.0)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/UserDefaults (~> 6.5)
+  - FirebaseMLCommon (0.19.0):
+    - FirebaseCore (~> 6.3)
+    - FirebaseInstanceID (~> 4.2)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - GoogleUtilities/UserDefaults (~> 6.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.5)
+  - FirebaseMLVision (0.19.0):
+    - FirebaseCore (~> 6.3)
+    - FirebaseMLCommon (~> 0.19)
+    - GoogleAPIClientForREST/Core (~> 1.3)
+    - GoogleAPIClientForREST/Vision (~> 1.3)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.5)
+  - FirebaseMLVisionAutoML (0.19.0):
+    - FirebaseCore (~> 6.3)
+    - FirebaseMLCommon (~> 0.19)
+    - FirebaseMLVision (~> 0.19)
+    - GTMSessionFetcher/Core (~> 1.1)
+    - TensorFlowLiteObjC (~> 1.14.0)
+  - FirebaseMLVisionBarcodeModel (0.19.0):
+    - FirebaseMLVision (~> 0.19)
+  - FirebaseMLVisionFaceModel (0.19.0):
+    - FirebaseMLVision (~> 0.19)
+  - FirebaseMLVisionLabelModel (0.19.0):
+    - FirebaseMLVision (~> 0.19)
+  - FirebaseMLVisionObjectDetection (0.19.0):
+    - FirebaseMLVision (~> 0.19)
+  - FirebaseMLVisionTextModel (0.19.0):
+    - FirebaseMLVision (~> 0.19)
+  - GoogleAPIClientForREST/Core (1.3.11):
+    - GTMSessionFetcher (>= 1.1.7)
+  - GoogleAPIClientForREST/Vision (1.3.11):
+    - GoogleAPIClientForREST/Core
+    - GTMSessionFetcher (>= 1.1.7)
   - GoogleAppMeasurement (6.4.1):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -59,6 +124,18 @@ PODS:
   - GoogleDataTransportCCTSupport (2.0.2):
     - GoogleDataTransport (~> 5.1)
     - nanopb (~> 0.3.901)
+  - GoogleToolboxForMac/DebugUtils (2.2.2):
+    - GoogleToolboxForMac/Defines (= 2.2.2)
+  - GoogleToolboxForMac/Defines (2.2.2)
+  - GoogleToolboxForMac/Logger (2.2.2):
+    - GoogleToolboxForMac/Defines (= 2.2.2)
+  - "GoogleToolboxForMac/NSData+zlib (2.2.2)":
+    - GoogleToolboxForMac/Defines (= 2.2.2)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.2)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.2)
+    - GoogleToolboxForMac/Defines (= 2.2.2)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.2)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.2)"
   - GoogleUtilities/AppDelegateSwizzler (6.5.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -77,7 +154,11 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.5.2):
     - GoogleUtilities/Logger
+  - GTMSessionFetcher (1.3.1):
+    - GTMSessionFetcher/Full (= 1.3.1)
   - GTMSessionFetcher/Core (1.3.1)
+  - GTMSessionFetcher/Full (1.3.1):
+    - GTMSessionFetcher/Core (= 1.3.1)
   - leveldb-library (1.22)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
@@ -85,6 +166,10 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - PromisesObjC (1.2.8)
+  - Protobuf (3.11.4)
+  - TensorFlowLiteC (1.14.0)
+  - TensorFlowLiteObjC (1.14.0):
+    - TensorFlowLiteC (= 1.14.0)
 
 DEPENDENCIES:
   - CodableFirebase
@@ -92,6 +177,13 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/MLVision
+  - Firebase/MLVisionAutoML
+  - Firebase/MLVisionBarcodeModel
+  - Firebase/MLVisionFaceModel
+  - Firebase/MLVisionLabelModel
+  - Firebase/MLVisionObjectDetection
+  - Firebase/MLVisionTextModel
 
 SPEC REPOS:
   trunk:
@@ -105,14 +197,28 @@ SPEC REPOS:
     - FirebaseCoreDiagnosticsInterop
     - FirebaseDatabase
     - FirebaseInstallations
+    - FirebaseInstanceID
+    - FirebaseMLCommon
+    - FirebaseMLVision
+    - FirebaseMLVisionAutoML
+    - FirebaseMLVisionBarcodeModel
+    - FirebaseMLVisionFaceModel
+    - FirebaseMLVisionLabelModel
+    - FirebaseMLVisionObjectDetection
+    - FirebaseMLVisionTextModel
+    - GoogleAPIClientForREST
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
+    - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - Protobuf
+    - TensorFlowLiteC
+    - TensorFlowLiteObjC
 
 SPEC CHECKSUMS:
   CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
@@ -125,15 +231,29 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
   FirebaseDatabase: 0144e0706a4761f1b0e8679572eba8095ddb59be
   FirebaseInstallations: acb3216eb9784d3b1d2d2d635ff74fa892cc0c44
+  FirebaseInstanceID: 4b87a9a75ef628a53bb5de46e4d4cecfcce88c02
+  FirebaseMLCommon: 074a67e05122b1c9f6401a4e33b2cea3b4efd224
+  FirebaseMLVision: 7a456009787690e3b53436092ae9b635563de8f3
+  FirebaseMLVisionAutoML: ce5b5dfd1443e8c08a68f4dafa6b1c169d07a6a2
+  FirebaseMLVisionBarcodeModel: 96ef18a75ecdf867244ef2e75c8c1f01517667dc
+  FirebaseMLVisionFaceModel: d6ba42000f263df52187aee936262bc2002b3389
+  FirebaseMLVisionLabelModel: 7638a20d27219d5baa4b534a62375fc1d5bd077d
+  FirebaseMLVisionObjectDetection: 63472fa09c90cfaec1cdf74d5fe28114beacecb2
+  FirebaseMLVisionTextModel: c264caa3100ca804580bf2a7c1cb9ff390d1f471
+  GoogleAPIClientForREST: 0f19a8280dfe6471f76016645d26eb5dae305101
   GoogleAppMeasurement: e49be3954045b17d046f271b9cc1ec052bad9702
   GoogleDataTransport: 6ffa4dd0b6d547f8d27b91bd92fa9e197a3f5f1f
   GoogleDataTransportCCTSupport: 12f02e5c8f09c055615de90bcd5ba2c375546051
+  GoogleToolboxForMac: 800648f8b3127618c1b59c7f97684427630c5ea3
   GoogleUtilities: ad0f3b691c67909d03a3327cc205222ab8f42e0e
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
+  TensorFlowLiteC: a6702011fb661928634e59565b5fe262f69692d0
+  TensorFlowLiteObjC: ece71b1e78f3df5952996c1606934b1d5538c875
 
-PODFILE CHECKSUM: 0e7395cddb16997d50283d21b25990e30dfb520e
+PODFILE CHECKSUM: 8ea66f073d4591affe311dfe1ba51944efcd955f
 
 COCOAPODS: 1.9.1
