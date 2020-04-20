@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/michelletai/Desktop/Duke 2019-2020/CS290/transylvania/Choices/Choices/MLVision/MLViewController.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/michelletai/Desktop/Duke 2019-2020/CS290/transylvania/Choices/Choices/MLVision/ML.storyboard">
-   </FileRef>
-   <FileRef
       location = "group:Choices.xcodeproj">
    </FileRef>
    <FileRef

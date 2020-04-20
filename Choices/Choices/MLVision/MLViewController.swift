@@ -1,6 +1,6 @@
 //
 //  MLViewController.swift
-//  
+//
 //
 //  Created by Michelle Tai on 4/19/20.
 //
@@ -514,3 +514,4 @@ fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePicke
   return input.rawValue
 }
 }
+
