@@ -61,6 +61,9 @@ class oldListTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Back to All Lists", style: .default, handler: {action in
             self.navigationController?.popToRootViewController(animated: true)
             }))
+        alertController.addAction(UIAlertAction(title: "Choose Again", style: .default, handler: {action in
+            self.chooseFromList()
+        }))
          present(alertController, animated: true, completion: nil)
     }
     

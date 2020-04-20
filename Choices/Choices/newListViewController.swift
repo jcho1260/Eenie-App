@@ -39,11 +39,18 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var textChoice: UITextField!
     
     @IBAction func saveList(_ sender: Any) {
-         let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
+         chooseFromList()
+    }
+    
+    @objc func chooseFromList() {
+        let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
          let alertController = UIAlertController(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Back to All Lists", style: .default, handler: {action in
-            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popToRootViewController(animated: true)
             }))
+        alertController.addAction(UIAlertAction(title: "Choose Again", style: .default, handler: {action in
+            self.chooseFromList()
+        }))
          present(alertController, animated: true, completion: nil)
     }
     
