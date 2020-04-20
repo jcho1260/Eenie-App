@@ -387,7 +387,7 @@
         <!--View Controller-->
         <scene sceneID="BQj-WT-Kyz">
             <objects>
-                <viewController storyboardIdentifier="viewController" id="dWL-yG-mve" customClass="MLViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewController" id="dWL-yG-mve" customClass="MLViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MUv-GC-yu2"/>
                         <viewControllerLayoutGuide type="bottom" id="ZLb-wQ-v5A"/>
@@ -494,7 +494,7 @@
         <!--Camera View Controller-->
         <scene sceneID="dN7-Z3-bZg">
             <objects>
-                <viewController id="QQn-7i-Q5v" customClass="CameraViewController" sceneMemberID="viewController">
+                <viewController id="QQn-7i-Q5v" customClass="CameraViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8OB-fZ-M0Q"/>
                         <viewControllerLayoutGuide type="bottom" id="2nQ-7E-dKu"/>
@@ -553,7 +553,7 @@
         <!--ML Recognized Options-->
         <scene sceneID="usT-3J-RRK">
             <objects>
-                <tableViewController id="0OY-Iv-fyp" customClass="MLTableViewController" customModule="Choices" sceneMemberID="viewController">
+                <tableViewController id="0OY-Iv-fyp" customClass="MLTableViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kmx-bJ-rxX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
