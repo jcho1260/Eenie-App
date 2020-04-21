@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d2u-Jp-5lc">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -441,22 +441,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vf8-q3-5ar">
-                                <rect key="frame" x="130" y="132" width="154" height="71"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiger2" translatesAutoresizingMaskIntoConstraints="NO" id="cMQ-AY-bBU">
+                                <rect key="frame" x="75" y="431" width="264" height="257"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="257" id="f5V-Fu-ti4"/>
+                                    <constraint firstAttribute="width" constant="264" id="gnk-7V-O4j"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgH-gv-j9M">
+                                <rect key="frame" x="103" y="276" width="216" height="75"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="YEb-rx-T0p"/>
+                                    <constraint firstAttribute="height" constant="75" id="FOw-SL-CrA"/>
                                 </constraints>
-                                <state key="normal" title="my lists">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Z4i-sO-UJ3" kind="show" id="N18-Ys-Iiq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgH-gv-j9M">
-                                <rect key="frame" x="130" y="276" width="154" height="68"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="I have a question">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -464,25 +461,27 @@
                                     <segue destination="wgb-Tb-D2k" kind="show" id="MW5-0w-SEx"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiger2" translatesAutoresizingMaskIntoConstraints="NO" id="cMQ-AY-bBU">
-                                <rect key="frame" x="75" y="423" width="264" height="257"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="257" id="f5V-Fu-ti4"/>
-                                    <constraint firstAttribute="width" constant="264" id="gnk-7V-O4j"/>
-                                </constraints>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vf8-q3-5ar">
+                                <rect key="frame" x="103" y="152" width="216" height="71"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="my lists">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Z4i-sO-UJ3" kind="show" id="N18-Ys-Iiq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="IgH-gv-j9M" firstAttribute="top" secondItem="Vf8-q3-5ar" secondAttribute="bottom" constant="73" id="4cK-p4-ak2"/>
-                            <constraint firstItem="Vf8-q3-5ar" firstAttribute="trailing" secondItem="IgH-gv-j9M" secondAttribute="trailing" id="I4o-qP-3Q7"/>
-                            <constraint firstItem="Vf8-q3-5ar" firstAttribute="top" secondItem="f5d-ib-ZLU" secondAttribute="top" constant="132" id="Ji8-ao-ZyG"/>
-                            <constraint firstItem="cMQ-AY-bBU" firstAttribute="top" secondItem="IgH-gv-j9M" secondAttribute="bottom" constant="79" id="Kgg-Bq-Lfb"/>
-                            <constraint firstItem="Vf8-q3-5ar" firstAttribute="centerX" secondItem="cMQ-AY-bBU" secondAttribute="centerX" id="Mq5-Tm-kAC"/>
-                            <constraint firstItem="Vf8-q3-5ar" firstAttribute="leading" secondItem="f5d-ib-ZLU" secondAttribute="leading" constant="130" id="XJy-28-tVM"/>
-                            <constraint firstItem="cMQ-AY-bBU" firstAttribute="centerX" secondItem="Ohm-LI-3XS" secondAttribute="centerX" id="ZE8-89-TfL"/>
-                            <constraint firstItem="f5d-ib-ZLU" firstAttribute="bottom" secondItem="cMQ-AY-bBU" secondAttribute="bottom" constant="128" id="i8Q-fq-aTz"/>
-                            <constraint firstItem="Vf8-q3-5ar" firstAttribute="leading" secondItem="IgH-gv-j9M" secondAttribute="leading" id="sws-GN-BZf"/>
+                            <constraint firstItem="IgH-gv-j9M" firstAttribute="top" secondItem="Vf8-q3-5ar" secondAttribute="bottom" constant="53" id="0Zv-f9-7Sl"/>
+                            <constraint firstItem="f5d-ib-ZLU" firstAttribute="trailing" secondItem="IgH-gv-j9M" secondAttribute="trailing" constant="95" id="2fR-EA-TGZ"/>
+                            <constraint firstItem="cMQ-AY-bBU" firstAttribute="centerX" secondItem="Ohm-LI-3XS" secondAttribute="centerX" id="4u3-ng-LDv"/>
+                            <constraint firstItem="f5d-ib-ZLU" firstAttribute="bottom" secondItem="cMQ-AY-bBU" secondAttribute="bottom" constant="120" id="FNZ-fe-t0u"/>
+                            <constraint firstItem="IgH-gv-j9M" firstAttribute="leading" secondItem="Vf8-q3-5ar" secondAttribute="leading" id="HUz-U8-gIi"/>
+                            <constraint firstItem="IgH-gv-j9M" firstAttribute="leading" secondItem="f5d-ib-ZLU" secondAttribute="leading" constant="103" id="NQi-Zq-Nko"/>
+                            <constraint firstItem="cMQ-AY-bBU" firstAttribute="top" secondItem="IgH-gv-j9M" secondAttribute="bottom" constant="80" id="qCG-ps-kp2"/>
+                            <constraint firstItem="IgH-gv-j9M" firstAttribute="trailing" secondItem="Vf8-q3-5ar" secondAttribute="trailing" id="vGy-hv-gJM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f5d-ib-ZLU"/>
                     </view>
