@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var eenieNameLabel: UILabel!
     
+    var tapGesture: UITapGestureRecognizer?
+    
 //    var gradientLayer: CAGradientLayer!
 //
 //    func createGradientLayer() {
@@ -42,9 +44,24 @@ class ViewController: UIViewController {
     loginButton.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.5450980392, blue: 0.5450980392, alpha: 1)
     eenieNameLabel.text = "eenie"
     // Do any additional setup after loading the view.
+    emailTf.delegate = self
+    passwordTf.delegate = self
 
+    let tap = UITapGestureRecognizer(
+        target: self,
+        action: #selector(dismissKeyboard)
+    )
+    tapGesture = tap
+
+    view.addGestureRecognizer(tap)
     
   }
+    
+    @objc func dismissKeyboard() {
+        emailTf.resignFirstResponder()
+        passwordTf.resignFirstResponder()
+    }
+    
     //Below lets us make sure that the user stays logged when they open and close the app
     
     // Under the if statements we are checking whether the user is signed in
@@ -127,6 +144,14 @@ extension UIViewController {
         let dismissAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
         alertController.addAction(dismissAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+
+        return true
     }
 }
                                                               

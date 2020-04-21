@@ -16,7 +16,12 @@ class justButtonsViewController: UIViewController {
     @IBOutlet weak var magicButton: UIButton!
     @IBAction func logOutButton(_ sender: Any) {
         try! Auth.auth().signOut()
-        self.performSegue(withIdentifier: "logOutSegue", sender: self)
+        let loginViewController = UIStoryboard(
+            name: "Main",
+            bundle: Bundle.main
+        ).instantiateViewController(identifier: "loginScreen")
+
+        UIApplication.shared.keyWindow?.rootViewController = loginViewController
         
     }
     
