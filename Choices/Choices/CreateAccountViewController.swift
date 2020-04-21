@@ -13,13 +13,30 @@ class CreateAccountViewController: UIViewController {
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    var tapGesture: UITapGestureRecognizer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
       
       self.view.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.5450980392, blue: 0.5450980392, alpha: 1)
         // Do any additional setup after loading the view.
+        
+        email.delegate = self
+        password.delegate = self
+
+        let tap = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboard)
+        )
+        tapGesture = tap
+
+        view.addGestureRecognizer(tap)
     }
+    
+        @objc func dismissKeyboard() {
+               email.resignFirstResponder()
+               password.resignFirstResponder()
+           }
     
     @IBAction func backButtonPushed(_ sender: Any) {
         dismiss(animated: true) {
@@ -80,4 +97,12 @@ class CreateAccountViewController: UIViewController {
     }
     */
 
+}
+
+extension CreateAccountViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+
+        return true
+    }
 }
