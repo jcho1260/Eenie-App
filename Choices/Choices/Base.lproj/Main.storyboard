@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d2u-Jp-5lc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -426,8 +426,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="Z4i-sO-UJ3" kind="show" id="xcH-cj-UaG"/>
-                        <segue destination="wgb-Tb-D2k" kind="show" id="PVU-oC-2uZ"/>
+                        <segue destination="d2u-Jp-5lc" kind="show" id="Cbz-be-rZs"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5W-Fi-ur6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -439,11 +438,11 @@
             <objects>
                 <viewController id="d2u-Jp-5lc" customClass="justButtonViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ohm-LI-3XS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vf8-q3-5ar">
-                                <rect key="frame" x="130" y="176" width="154" height="71"/>
+                                <rect key="frame" x="130" y="132" width="154" height="71"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="YEb-rx-T0p"/>
@@ -451,16 +450,22 @@
                                 <state key="normal" title="my lists">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Z4i-sO-UJ3" kind="show" id="N18-Ys-Iiq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgH-gv-j9M">
-                                <rect key="frame" x="130" y="320" width="154" height="78"/>
+                                <rect key="frame" x="130" y="276" width="154" height="68"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="I have a question">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="wgb-Tb-D2k" kind="show" id="MW5-0w-SEx"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiger2" translatesAutoresizingMaskIntoConstraints="NO" id="cMQ-AY-bBU">
-                                <rect key="frame" x="75" y="477" width="264" height="257"/>
+                                <rect key="frame" x="75" y="423" width="264" height="257"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="257" id="f5V-Fu-ti4"/>
                                     <constraint firstAttribute="width" constant="264" id="gnk-7V-O4j"/>
