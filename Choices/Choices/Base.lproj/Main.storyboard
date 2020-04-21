@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wgb-Tb-D2k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -427,10 +427,10 @@
             </objects>
             <point key="canvasLocation" x="966.66666666666674" y="129.91071428571428"/>
         </scene>
-        <!--Just Button View Controller-->
+        <!--Just Buttons View Controller-->
         <scene sceneID="y7w-hk-fr2">
             <objects>
-                <viewController id="d2u-Jp-5lc" customClass="justButtonViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d2u-Jp-5lc" customClass="justButtonsViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ohm-LI-3XS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -483,15 +483,14 @@
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="eBC-dI-86M">
                             <color key="tintColor" red="0.85863108649999997" green="0.62964346579999997" blue="0.35886742980000003" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                             <connections>
-                                <action selector="logOutButton:" destination="d2u-Jp-5lc" id="KSR-cN-374"/>
+                                <action selector="logOutButton:" destination="d2u-Jp-5lc" id="ruN-UC-FnG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="listButton" destination="Vf8-q3-5ar" id="vnz-3g-HVg"/>
-                        <outlet property="magicButton" destination="IgH-gv-j9M" id="GKa-mM-Oq1"/>
-                        <outlet property="questionButton" destination="IgH-gv-j9M" id="s7x-3W-hXv"/>
-                        <segue destination="6mZ-YV-Ent" kind="unwind" unwindAction="unwindToLogin:" id="wwj-K3-8w1"/>
+                        <outlet property="magicButton" destination="IgH-gv-j9M" id="md9-Ed-Fuj"/>
+                        <segue destination="6mZ-YV-Ent" kind="unwind" identifier="logOutSegue" unwindAction="unwindToLogin:" id="wwj-K3-8w1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOX-uE-WC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -721,6 +720,9 @@
             <point key="canvasLocation" x="2780" y="-684"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iDN-qk-MU1"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cloud_download" width="36" height="36"/>
         <image name="magic8" width="150" height="147"/>
@@ -729,7 +731,4 @@
         <image name="switch_camera" width="16" height="16"/>
         <image name="tiger2" width="1024" height="1024"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="iDN-qk-MU1"/>
-    </inferredMetricsTieBreakers>
 </document>

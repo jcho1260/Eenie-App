@@ -3,4 +3,114 @@
    uuid = "C67F992E-DCB4-4A94-B6BE-63DD6BFCA5C6"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35A4479B-7958-4F7E-8264-CBE51FAF77BA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Choices/justButtonsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "justButtonsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "35A4479B-7958-4F7E-8264-CBE51FAF77BA - b5c0a8480fea9b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "eenie.justButtonsViewController.listButton.getter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "eenie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jincho/Desktop/CS290/transylvania/Choices/Choices/justButtonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "35A4479B-7958-4F7E-8264-CBE51FAF77BA - 2fc8621b02911984"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "eenie.justButtonsViewController.listButton.setter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "eenie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jincho/Desktop/CS290/transylvania/Choices/Choices/justButtonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "35A4479B-7958-4F7E-8264-CBE51FAF77BA - f19740c806e105b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "eenie.justButtonsViewController.listButton.modify : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "eenie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jincho/Desktop/CS290/transylvania/Choices/Choices/justButtonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  uuid = "35A4479B-7958-4F7E-8264-CBE51FAF77BA - 4cf337207e8d9fa3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "eenie.justButtonsViewController.listButton.modify : Swift.Optional&lt;__C.UIButton&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "eenie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jincho/Desktop/CS290/transylvania/Choices/Choices/justButtonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "35A4479B-7958-4F7E-8264-CBE51FAF77BA - 7b87b3c084f4cae3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "eenie.justButtonsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; eenie.justButtonsViewController"
+                  moduleName = "eenie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jincho/Desktop/CS290/transylvania/Choices/Choices/justButtonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "181">
+               </Location>
+               <Location
+                  uuid = "35A4479B-7958-4F7E-8264-CBE51FAF77BA - 2869062787ac5e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "eenie.justButtonsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;eenie.justButtonsViewController&gt;"
+                  moduleName = "eenie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jincho/Desktop/CS290/transylvania/Choices/Choices/justButtonsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "119">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
