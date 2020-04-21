@@ -42,7 +42,7 @@
 		4E859ED1244604FE00B00A3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		4E96A904244C9088001D64E1 /* Random8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random8ViewController.swift; sourceTree = "<group>"; };
 		4E96A906244C969E001D64E1 /* Figure 8 Responses */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Figure 8 Responses"; sourceTree = "<group>"; };
-		4EC60DE32432389D00FD165D /* Choices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Choices.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EC60DE32432389D00FD165D /* eenie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eenie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC60DE62432389D00FD165D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EC60DE82432389D00FD165D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4EC60DEA2432389E00FD165D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		4EC60DE42432389D00FD165D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4EC60DE32432389D00FD165D /* Choices.app */,
+				4EC60DE32432389D00FD165D /* eenie.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 			);
 			name = Choices;
 			productName = Choices;
-			productReference = 4EC60DE32432389D00FD165D /* Choices.app */;
+			productReference = 4EC60DE32432389D00FD165D /* eenie.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -434,7 +434,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.callie.Choices;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = eenie;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -452,7 +452,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.callie.Choices;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = eenie;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

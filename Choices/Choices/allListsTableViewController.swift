@@ -111,6 +111,13 @@ class allListsTableViewController: UITableViewController {
         super.viewDidLoad()
         observeLists()
         self.modalPresentationStyle = .overFullScreen
+        assignBackground()
+    }
+    
+    func assignBackground(){
+        let backgroundImage = UIImageView(image: UIImage(named: "tiger-transparent"))
+        backgroundImage.contentMode = .scaleAspectFill
+        tableView.backgroundView = backgroundImage
     }
     
     //getting all the lists and showing in table view
@@ -196,6 +203,11 @@ class allListsTableViewController: UITableViewController {
         cell.listID = lists.id
         cell.listName = lists.name
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // #warning Incomplete implementation, return the number of rows
+        cell.backgroundColor = UIColor.clear
     }
     
     // Override to support editing the table view.

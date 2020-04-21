@@ -82,8 +82,15 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         reloadChoices()
         self.tableChoices.delegate = self
         self.tableChoices.dataSource = self
-        
+        assignBackground()
     }
+    
+    func assignBackground(){
+            let backgroundImage = UIImageView(image: UIImage(named: "tiger-transparent"))
+            backgroundImage.contentMode = .scaleAspectFill
+            tableChoices.backgroundView = backgroundImage
+        }
+    
     
     func reloadChoices(){
         let userID = user?.uid
@@ -158,6 +165,11 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         choices = allChoices[indexPath.row]
         cell.choiceText.text = choices.text
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // #warning Incomplete implementation, return the number of rows
+        cell.backgroundColor = UIColor.clear
     }
     
     

@@ -76,6 +76,7 @@ class oldListTableViewController: UITableViewController {
             navigationItem.rightBarButtonItems = [addButton, doneButton]
 
             observeChoices()
+            assignBackground()
             // Uncomment the following line to preserve selection between presentations
             // self.clearsSelectionOnViewWillAppear = false
 
@@ -85,7 +86,12 @@ class oldListTableViewController: UITableViewController {
 
         // MARK: - Table view data source
         
-        
+        func assignBackground(){
+            let backgroundImage = UIImageView(image: UIImage(named: "tiger-transparent"))
+            backgroundImage.contentMode = .scaleAspectFill
+            tableView.backgroundView = backgroundImage
+        }
+    
         func observeChoices(){
             let userID = self.user?.uid
             choiceRef = Database.database().reference().child("users").child(userID!).child("lists").child(listID).child("choices")
@@ -176,6 +182,11 @@ class oldListTableViewController: UITableViewController {
             delRef = Database.database().reference().child("users").child(userID!).child("lists").child(listID).child("choices").child(choiceID)
             delRef?.removeValue()
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // #warning Incomplete implementation, return the number of rows
+        cell.backgroundColor = UIColor.clear
     }
         
 
