@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -176,11 +176,12 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Example List 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8R-hl-wdY">
                                             <rect key="frame" x="20" y="11" width="374" height="48"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
+                                            <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="20"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="highlightedColor" red="0.85863108649999997" green="0.62964346579999997" blue="0.35886742980000003" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="b8R-hl-wdY" firstAttribute="centerY" secondItem="NJ2-OG-AXp" secondAttribute="centerY" id="4rP-w3-ZJI"/>
                                         <constraint firstItem="b8R-hl-wdY" firstAttribute="centerX" secondItem="NJ2-OG-AXp" secondAttribute="centerX" id="a3K-66-MXA"/>
@@ -200,11 +201,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="All Lists" id="YVg-KZ-B63">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="gYm-VQ-k9s">
+                            <color key="tintColor" red="0.85863108649999997" green="0.62964346579999997" blue="0.35886742980000003" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="logOutButton:" destination="Z4i-sO-UJ3" id="bT0-0S-xpE"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fdH-7B-Xnu">
+                            <color key="tintColor" red="0.85863108649999997" green="0.62964346579999997" blue="0.35886742980000003" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="newListButton:" destination="Z4i-sO-UJ3" id="sZU-o7-ljt"/>
                             </connections>
@@ -218,7 +221,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3VW-BD-ALi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1842" y="130"/>
+            <point key="canvasLocation" x="1840.5797101449277" y="129.91071428571428"/>
         </scene>
         <!--New List View Controller-->
         <scene sceneID="BvV-1N-vY3">
@@ -241,7 +244,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hx-BM-Jc7">
                                                     <rect key="frame" x="20" y="11" width="374" height="48"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -318,7 +321,7 @@
                                         <fragment content="generate answer">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" size="25" name="OpenSans-ExtraBold"/>
+                                                <font key="NSFont" metaFont="system" size="25"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -379,7 +382,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saR-g7-En8">
                                             <rect key="frame" x="20" y="11" width="374" height="48"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -653,6 +656,9 @@
             <point key="canvasLocation" x="2780" y="-684"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iDN-qk-MU1"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cloud_download" width="36" height="36"/>
         <image name="magic9" width="450" height="480"/>
@@ -661,7 +667,4 @@
         <image name="switch_camera" width="16" height="16"/>
         <image name="tiger2" width="1024" height="1024"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="iDN-qk-MU1"/>
-    </inferredMetricsTieBreakers>
 </document>
