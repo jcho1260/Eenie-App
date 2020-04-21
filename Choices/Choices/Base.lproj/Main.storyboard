@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="loginScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +111,7 @@
         <!--Create Account View Controller-->
         <scene sceneID="BfG-20-9Z7">
             <objects>
-                <viewController id="wWP-nE-v3L" customClass="CreateAccountViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wWP-nE-v3L" customClass="CreateAccountViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R4A-33-yFq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,13 +161,13 @@
         <!--All Lists-->
         <scene sceneID="4K6-0Z-HeI">
             <objects>
-                <tableViewController storyboardIdentifier="AllListsViewController" title="All Lists" id="Z4i-sO-UJ3" customClass="allListsTableViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AllListsViewController" title="All Lists" id="Z4i-sO-UJ3" customClass="allListsTableViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NVw-0M-GhA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="List" rowHeight="70" id="2rg-0C-Equ" customClass="ListTableViewCell" customModule="Choices" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="List" rowHeight="70" id="2rg-0C-Equ" customClass="ListTableViewCell" customModule="eenie" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2rg-0C-Equ" id="NJ2-OG-AXp">
@@ -217,16 +217,18 @@
                     <connections>
                         <segue destination="IHw-fF-3Vj" kind="show" identifier="newListViewController" id="bjQ-xb-EBw"/>
                         <segue destination="dWL-yG-mve" kind="show" identifier="MLViewController" id="qOU-Nr-XOd"/>
+                        <segue destination="fNl-Ce-OEE" kind="unwind" identifier="logOutSegue" unwindAction="unwindToLogin:" id="HyV-57-gBw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3VW-BD-ALi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="fNl-Ce-OEE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1840.5797101449277" y="129.91071428571428"/>
         </scene>
         <!--New List View Controller-->
         <scene sceneID="BvV-1N-vY3">
             <objects>
-                <viewController id="IHw-fF-3Vj" customClass="newListViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IHw-fF-3Vj" customClass="newListViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8sf-Ay-ea9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,7 +237,7 @@
                                 <rect key="frame" x="0.0" y="181" width="414" height="578"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="choices" rowHeight="70" id="ZA4-vT-2Nf" customClass="ChoiceTableViewCell" customModule="Choices" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="choices" rowHeight="70" id="ZA4-vT-2Nf" customClass="ChoiceTableViewCell" customModule="eenie" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZA4-vT-2Nf" id="cLV-Eb-kdu">
@@ -307,7 +309,7 @@
         <!--Random8 View Controller-->
         <scene sceneID="EkE-ev-a8K">
             <objects>
-                <viewController id="wgb-Tb-D2k" customClass="Random8ViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wgb-Tb-D2k" customClass="Random8ViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QUF-eI-pUn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -367,13 +369,13 @@
         <!--Old List Table View Controller-->
         <scene sceneID="AOR-pv-VUM">
             <objects>
-                <tableViewController id="xhM-uO-qMP" customClass="oldListTableViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xhM-uO-qMP" customClass="oldListTableViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="be2-zI-1bL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="choice" rowHeight="70" id="jOd-Cr-VV6" customClass="OldChoiceTableViewCell" customModule="Choices" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="choice" rowHeight="70" id="jOd-Cr-VV6" customClass="OldChoiceTableViewCell" customModule="eenie" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jOd-Cr-VV6" id="IH2-eI-0Ky">
@@ -437,7 +439,7 @@
         <!--View Controller-->
         <scene sceneID="BQj-WT-Kyz">
             <objects>
-                <viewController storyboardIdentifier="viewController" id="dWL-yG-mve" customClass="MLViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewController" id="dWL-yG-mve" customClass="MLViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MUv-GC-yu2"/>
                         <viewControllerLayoutGuide type="bottom" id="ZLb-wQ-v5A"/>
@@ -544,7 +546,7 @@
         <!--Camera View Controller-->
         <scene sceneID="dN7-Z3-bZg">
             <objects>
-                <viewController id="QQn-7i-Q5v" customClass="CameraViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QQn-7i-Q5v" customClass="CameraViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8OB-fZ-M0Q"/>
                         <viewControllerLayoutGuide type="bottom" id="2nQ-7E-dKu"/>
@@ -603,7 +605,7 @@
         <!--ML Recognized Options-->
         <scene sceneID="usT-3J-RRK">
             <objects>
-                <tableViewController id="0OY-Iv-fyp" customClass="MLTableViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="0OY-Iv-fyp" customClass="MLTableViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kmx-bJ-rxX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
