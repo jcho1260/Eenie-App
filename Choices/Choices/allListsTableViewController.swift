@@ -53,13 +53,7 @@ class allListsTableViewController: UITableViewController {
         var text: String
     }
     
-    @IBAction func logOutButton(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "loginScreen")
-//        self.present(vc, animated: true)
-        self.performSegue(withIdentifier: "logOutSegue", sender: self)
-        try! Auth.auth().signOut()
-    }
+    
     
     @IBAction func newListButton(_ sender: UIBarButtonItem) {
         let userID = self.user?.uid

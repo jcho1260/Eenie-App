@@ -200,12 +200,6 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="All Lists" id="YVg-KZ-B63">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="gYm-VQ-k9s">
-                            <color key="tintColor" red="0.85863108649999997" green="0.62964346579999997" blue="0.35886742980000003" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
-                            <connections>
-                                <action selector="logOutButton:" destination="Z4i-sO-UJ3" id="bT0-0S-xpE"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fdH-7B-Xnu">
                             <color key="tintColor" red="0.85863108649999997" green="0.62964346579999997" blue="0.35886742980000003" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
                             <connections>
@@ -217,11 +211,9 @@
                     <connections>
                         <segue destination="IHw-fF-3Vj" kind="show" identifier="newListViewController" id="bjQ-xb-EBw"/>
                         <segue destination="dWL-yG-mve" kind="show" identifier="MLViewController" id="qOU-Nr-XOd"/>
-                        <segue destination="fNl-Ce-OEE" kind="unwind" identifier="logOutSegue" unwindAction="unwindToLogin:" id="HyV-57-gBw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3VW-BD-ALi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="fNl-Ce-OEE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1840.5797101449277" y="129.91071428571428"/>
         </scene>
@@ -487,13 +479,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f5d-ib-ZLU"/>
                     </view>
-                    <navigationItem key="navigationItem" id="DmQ-SW-PbT"/>
+                    <navigationItem key="navigationItem" id="DmQ-SW-PbT">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="eBC-dI-86M">
+                            <color key="tintColor" red="0.85863108649999997" green="0.62964346579999997" blue="0.35886742980000003" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="logOutButton:" destination="d2u-Jp-5lc" id="KSR-cN-374"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="listButton" destination="Vf8-q3-5ar" id="Lxu-Bj-aZv"/>
                         <outlet property="questionButton" destination="IgH-gv-j9M" id="s7x-3W-hXv"/>
+                        <segue destination="6mZ-YV-Ent" kind="unwind" unwindAction="unwindToLogin:" id="wwj-K3-8w1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOX-uE-WC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="6mZ-YV-Ent" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="776.81159420289862" y="-684.375"/>
         </scene>

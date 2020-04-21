@@ -58,7 +58,7 @@ class oldListTableViewController: UITableViewController {
     @objc func chooseFromList() {
         let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
          let alertController = UIAlertController(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Back to All Lists", style: .default, handler: {action in
+        alertController.addAction(UIAlertAction(title: "Back to Main", style: .default, handler: {action in
             self.navigationController?.popToRootViewController(animated: true)
             }))
         alertController.addAction(UIAlertAction(title: "Choose Again", style: .default, handler: {action in
