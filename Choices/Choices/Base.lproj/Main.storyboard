@@ -490,7 +490,7 @@
                     <connections>
                         <outlet property="listButton" destination="Vf8-q3-5ar" id="Lxu-Bj-aZv"/>
                         <outlet property="questionButton" destination="IgH-gv-j9M" id="s7x-3W-hXv"/>
-                        <segue destination="6mZ-YV-Ent" kind="unwind" identifier="logOutSegue" unwindAction="unwindToLogin:" id="wwj-K3-8w1"/>
+                        <segue destination="6mZ-YV-Ent" kind="unwind" unwindAction="unwindToLogin:" id="wwj-K3-8w1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOX-uE-WC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
