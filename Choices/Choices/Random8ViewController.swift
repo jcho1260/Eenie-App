@@ -19,7 +19,9 @@ class Random8ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        generateAnswerButton.layer.cornerRadius = 5
+        generateAnswerButton.layer.cornerRadius = 8
+        self.view.backgroundColor = #colorLiteral(red: 0.8470588235, green: 0.7058823529, blue: 0.6274509804, alpha: 1)
+      generateAnswerButton.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.5450980392, blue: 0.5450980392, alpha: 1)
 
         // Do any additional setup after loading the view.
     }
