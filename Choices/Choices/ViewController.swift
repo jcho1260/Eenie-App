@@ -60,6 +60,10 @@ class ViewController: UIViewController {
                         //self.performSegue(withIdentifier: "SignInSegueWay", sender: nil)
         }
     }
+    
+ @IBAction func unwindToLogin(_ segue: UIStoryboardSegue) {
+        print("Unwind to Root View Controller")
+    }
 
 
     @IBAction func loginPushed(_ sender: Any) {

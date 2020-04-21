@@ -54,9 +54,10 @@ class allListsTableViewController: UITableViewController {
     }
     
     @IBAction func logOutButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "loginScreen")
-        self.present(vc, animated: true)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "loginScreen")
+//        self.present(vc, animated: true)
+        self.performSegue(withIdentifier: "logOutSegue", sender: self)
         try! Auth.auth().signOut()
     }
     
@@ -177,12 +178,17 @@ class allListsTableViewController: UITableViewController {
             let displayVC = segue.destination as! MLViewController
             displayVC.listInfo = newList
         }
+        else if segue.identifier == "logOutSegue" {
+            let destinationViewController = segue.destination as! ViewController
+            // setup the destination controller
+        }
         
             
        }
 
     // MARK: - Table view data source
    
+  
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
