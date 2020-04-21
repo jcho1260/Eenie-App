@@ -21,8 +21,10 @@ class justButtonViewController: UIViewController {
       self.view.backgroundColor = #colorLiteral(red: 0.8470588235, green: 0.7058823529, blue: 0.6274509804, alpha: 1)
       listButton.layer.cornerRadius = 8
        listButton.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.5450980392, blue: 0.5450980392, alpha: 1)
+      
       questionButton.layer.cornerRadius = 8
-      questionButton.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.5450980392, blue: 0.5450980392, alpha: 1)
+      questionButton.backgroundColor = #colorLiteral(red: 0.8705882353, green: 0.568627451, blue: 0.3176470588, alpha: 1)
+      
     }
     
 
