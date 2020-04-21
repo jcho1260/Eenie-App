@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d2u-Jp-5lc">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="loginScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +111,7 @@
         <!--Create Account View Controller-->
         <scene sceneID="BfG-20-9Z7">
             <objects>
-                <viewController id="wWP-nE-v3L" customClass="CreateAccountViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wWP-nE-v3L" customClass="CreateAccountViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R4A-33-yFq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,13 +161,13 @@
         <!--All Lists-->
         <scene sceneID="4K6-0Z-HeI">
             <objects>
-                <tableViewController storyboardIdentifier="AllListsViewController" title="All Lists" id="Z4i-sO-UJ3" customClass="allListsTableViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AllListsViewController" title="All Lists" id="Z4i-sO-UJ3" customClass="allListsTableViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NVw-0M-GhA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="List" rowHeight="70" id="2rg-0C-Equ" customClass="ListTableViewCell" customModule="Choices" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="List" rowHeight="70" id="2rg-0C-Equ" customClass="ListTableViewCell" customModule="eenie" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2rg-0C-Equ" id="NJ2-OG-AXp">
@@ -226,16 +226,16 @@
         <!--New List View Controller-->
         <scene sceneID="BvV-1N-vY3">
             <objects>
-                <viewController id="IHw-fF-3Vj" customClass="newListViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IHw-fF-3Vj" customClass="newListViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8sf-Ay-ea9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZrF-Wr-P0h">
-                                <rect key="frame" x="0.0" y="181" width="414" height="578"/>
+                                <rect key="frame" x="0.0" y="93" width="414" height="612"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="choices" rowHeight="70" id="ZA4-vT-2Nf" customClass="ChoiceTableViewCell" customModule="Choices" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="choices" rowHeight="70" id="ZA4-vT-2Nf" customClass="ChoiceTableViewCell" customModule="eenie" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZA4-vT-2Nf" id="cLV-Eb-kdu">
@@ -261,7 +261,7 @@
                                 </prototypes>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Choice" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DNJ-b5-7cg">
-                                <rect key="frame" x="20" y="98" width="374" height="34"/>
+                                <rect key="frame" x="20" y="10" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -307,7 +307,7 @@
         <!--Random8 View Controller-->
         <scene sceneID="EkE-ev-a8K">
             <objects>
-                <viewController id="wgb-Tb-D2k" customClass="Random8ViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wgb-Tb-D2k" customClass="Random8ViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QUF-eI-pUn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -321,7 +321,7 @@
                                         <fragment content="generate answer">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" metaFont="system" size="25"/>
+                                                <font key="NSFont" size="25" name="HelveticaNeue"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -367,13 +367,13 @@
         <!--Old List Table View Controller-->
         <scene sceneID="AOR-pv-VUM">
             <objects>
-                <tableViewController id="xhM-uO-qMP" customClass="oldListTableViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xhM-uO-qMP" customClass="oldListTableViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="be2-zI-1bL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="choice" rowHeight="70" id="jOd-Cr-VV6" customClass="OldChoiceTableViewCell" customModule="Choices" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="choice" rowHeight="70" id="jOd-Cr-VV6" customClass="OldChoiceTableViewCell" customModule="eenie" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jOd-Cr-VV6" id="IH2-eI-0Ky">
@@ -426,28 +426,85 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="Z4i-sO-UJ3" kind="relationship" relationship="rootViewController" id="sGo-IK-E29"/>
-                        <segue destination="wgb-Tb-D2k" kind="show" id="b6F-3k-7UY"/>
+                        <segue destination="Z4i-sO-UJ3" kind="show" id="xcH-cj-UaG"/>
+                        <segue destination="wgb-Tb-D2k" kind="show" id="PVU-oC-2uZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5W-Fi-ur6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="966.66666666666674" y="129.91071428571428"/>
         </scene>
+        <!--Just Button View Controller-->
+        <scene sceneID="y7w-hk-fr2">
+            <objects>
+                <viewController id="d2u-Jp-5lc" customClass="justButtonViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ohm-LI-3XS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vf8-q3-5ar">
+                                <rect key="frame" x="130" y="176" width="154" height="71"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="YEb-rx-T0p"/>
+                                </constraints>
+                                <state key="normal" title="my lists">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgH-gv-j9M">
+                                <rect key="frame" x="130" y="320" width="154" height="78"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="I have a question">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiger2" translatesAutoresizingMaskIntoConstraints="NO" id="cMQ-AY-bBU">
+                                <rect key="frame" x="75" y="477" width="264" height="257"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="257" id="f5V-Fu-ti4"/>
+                                    <constraint firstAttribute="width" constant="264" id="gnk-7V-O4j"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="IgH-gv-j9M" firstAttribute="top" secondItem="Vf8-q3-5ar" secondAttribute="bottom" constant="73" id="4cK-p4-ak2"/>
+                            <constraint firstItem="Vf8-q3-5ar" firstAttribute="trailing" secondItem="IgH-gv-j9M" secondAttribute="trailing" id="I4o-qP-3Q7"/>
+                            <constraint firstItem="Vf8-q3-5ar" firstAttribute="top" secondItem="f5d-ib-ZLU" secondAttribute="top" constant="132" id="Ji8-ao-ZyG"/>
+                            <constraint firstItem="cMQ-AY-bBU" firstAttribute="top" secondItem="IgH-gv-j9M" secondAttribute="bottom" constant="79" id="Kgg-Bq-Lfb"/>
+                            <constraint firstItem="Vf8-q3-5ar" firstAttribute="centerX" secondItem="cMQ-AY-bBU" secondAttribute="centerX" id="Mq5-Tm-kAC"/>
+                            <constraint firstItem="Vf8-q3-5ar" firstAttribute="leading" secondItem="f5d-ib-ZLU" secondAttribute="leading" constant="130" id="XJy-28-tVM"/>
+                            <constraint firstItem="cMQ-AY-bBU" firstAttribute="centerX" secondItem="Ohm-LI-3XS" secondAttribute="centerX" id="ZE8-89-TfL"/>
+                            <constraint firstItem="f5d-ib-ZLU" firstAttribute="bottom" secondItem="cMQ-AY-bBU" secondAttribute="bottom" constant="128" id="i8Q-fq-aTz"/>
+                            <constraint firstItem="Vf8-q3-5ar" firstAttribute="leading" secondItem="IgH-gv-j9M" secondAttribute="leading" id="sws-GN-BZf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f5d-ib-ZLU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DmQ-SW-PbT"/>
+                    <connections>
+                        <outlet property="listButton" destination="Vf8-q3-5ar" id="Lxu-Bj-aZv"/>
+                        <outlet property="questionButton" destination="IgH-gv-j9M" id="s7x-3W-hXv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QOX-uE-WC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776.81159420289862" y="-684.375"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="BQj-WT-Kyz">
             <objects>
-                <viewController storyboardIdentifier="viewController" id="dWL-yG-mve" customClass="MLViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewController" id="dWL-yG-mve" customClass="MLViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MUv-GC-yu2"/>
                         <viewControllerLayoutGuide type="bottom" id="ZLb-wQ-v5A"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gKl-NY-Fon">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="1g6-K1-yCU" userLabel="Top Toolbar">
-                                <rect key="frame" x="0.0" y="100" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="12" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="CTV-8B-jEx"/>
                                 </constraints>
@@ -474,10 +531,10 @@
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ns4-3j-ckM">
-                                <rect key="frame" x="0.0" y="150" width="414" height="446"/>
+                                <rect key="frame" x="0.0" y="62" width="414" height="480"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ges-Ww-dd2" userLabel="Bottom Toolbar">
-                                <rect key="frame" x="0.0" y="596" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="542" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Pci-WM-35G"/>
                                 </constraints>
@@ -499,7 +556,7 @@
                                 </items>
                             </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text=" " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xRh-KP-wut">
-                                <rect key="frame" x="20" y="650" width="374" height="155"/>
+                                <rect key="frame" x="20" y="596" width="374" height="155"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -544,7 +601,7 @@
         <!--Camera View Controller-->
         <scene sceneID="dN7-Z3-bZg">
             <objects>
-                <viewController id="QQn-7i-Q5v" customClass="CameraViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QQn-7i-Q5v" customClass="CameraViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8OB-fZ-M0Q"/>
                         <viewControllerLayoutGuide type="bottom" id="2nQ-7E-dKu"/>
@@ -603,9 +660,9 @@
         <!--ML Recognized Options-->
         <scene sceneID="usT-3J-RRK">
             <objects>
-                <tableViewController id="0OY-Iv-fyp" customClass="MLTableViewController" customModule="Choices" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="0OY-Iv-fyp" customClass="MLTableViewController" customModule="eenie" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kmx-bJ-rxX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -656,9 +713,6 @@
             <point key="canvasLocation" x="2780" y="-684"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="iDN-qk-MU1"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="cloud_download" width="36" height="36"/>
         <image name="magic9" width="450" height="480"/>
@@ -667,4 +721,7 @@
         <image name="switch_camera" width="16" height="16"/>
         <image name="tiger2" width="1024" height="1024"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="iDN-qk-MU1"/>
+    </inferredMetricsTieBreakers>
 </document>

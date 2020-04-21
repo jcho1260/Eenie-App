@@ -12,6 +12,7 @@
 		01E38FD8244D3C7100146B3C /* MLKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E38FD7244D3C7100146B3C /* MLKitExtensions.swift */; };
 		01E38FDA244D3C9400146B3C /* MLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E38FD9244D3C9400146B3C /* MLTableViewController.swift */; };
 		01E38FDC244D65F800146B3C /* MLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E38FDB244D65F800146B3C /* MLViewController.swift */; };
+		4E08D09E244F5EA60033EA92 /* justButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08D09D244F5EA60033EA92 /* justButtonViewController.swift */; };
 		4E96A905244C9088001D64E1 /* Random8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E96A904244C9088001D64E1 /* Random8ViewController.swift */; };
 		4E96A907244C969E001D64E1 /* Figure 8 Responses in Resources */ = {isa = PBXBuildFile; fileRef = 4E96A906244C969E001D64E1 /* Figure 8 Responses */; };
 		4EC60DE72432389D00FD165D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC60DE62432389D00FD165D /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		01E38FD9244D3C9400146B3C /* MLTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTableViewController.swift; sourceTree = "<group>"; };
 		01E38FDB244D65F800146B3C /* MLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLViewController.swift; sourceTree = "<group>"; };
 		0DD26AC64DC804A2FEB7DE69 /* Pods-Choices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Choices.release.xcconfig"; path = "Target Support Files/Pods-Choices/Pods-Choices.release.xcconfig"; sourceTree = "<group>"; };
+		4E08D09D244F5EA60033EA92 /* justButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = justButtonViewController.swift; sourceTree = "<group>"; };
 		4E859ED1244604FE00B00A3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		4E96A904244C9088001D64E1 /* Random8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random8ViewController.swift; sourceTree = "<group>"; };
 		4E96A906244C969E001D64E1 /* Figure 8 Responses */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Figure 8 Responses"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				4EC60DE82432389D00FD165D /* SceneDelegate.swift */,
 				4EC60DEA2432389E00FD165D /* ViewController.swift */,
 				4EC60DEC2432389E00FD165D /* Main.storyboard */,
+				4E08D09D244F5EA60033EA92 /* justButtonViewController.swift */,
 				4E96A904244C9088001D64E1 /* Random8ViewController.swift */,
 				51CCA86F2442E1A800E354B4 /* oldListTableViewController.swift */,
 				51CCA8752442FB8200E354B4 /* newListViewController.swift */,
@@ -271,6 +274,7 @@
 				E0F96E012442AFA10013FA75 /* CreateAccountViewController.swift in Sources */,
 				4EC60DEB2432389E00FD165D /* ViewController.swift in Sources */,
 				4E96A905244C9088001D64E1 /* Random8ViewController.swift in Sources */,
+				4E08D09E244F5EA60033EA92 /* justButtonViewController.swift in Sources */,
 				01E38FC9244D25B100146B3C /* UIUtilities.swift in Sources */,
 				4EC60DE72432389D00FD165D /* AppDelegate.swift in Sources */,
 				51CCA8782443210D00E354B4 /* Lists.swift in Sources */,

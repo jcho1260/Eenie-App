@@ -38,7 +38,8 @@ class ViewController: UIViewController {
     
   override func viewDidLoad() {
     super.viewDidLoad()
-    loginButton.layer.cornerRadius = 5
+    loginButton.layer.cornerRadius = 8
+    loginButton.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.5450980392, blue: 0.5450980392, alpha: 1)
     eenieNameLabel.text = "eenie"
     // Do any additional setup after loading the view.
 
