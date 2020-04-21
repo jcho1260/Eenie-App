@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class justButtonViewController: UIViewController {
 
@@ -14,7 +16,14 @@ class justButtonViewController: UIViewController {
   
   @IBOutlet weak var questionButton: UIButton!
   
-
+    @IBAction func logOutButton(_ sender: Any) {
+        //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //        let vc = storyboard.instantiateViewController(withIdentifier: "loginScreen")
+        //        self.present(vc, animated: true)
+        self.performSegue(withIdentifier: "logOutSegue", sender: self)
+        try! Auth.auth().signOut()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
