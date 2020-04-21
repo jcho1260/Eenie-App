@@ -12,12 +12,14 @@ class Random8ViewController: UIViewController {
   
   @IBOutlet weak var myImage: UIImageView!
   
-  @IBOutlet weak var randomAnswer: UILabel!
+    @IBOutlet weak var generateAnswerButton: UIButton!
+    @IBOutlet weak var randomAnswer: UILabel!
   
   let imageNames = ["maybe", "negative", "positive"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        generateAnswerButton.layer.cornerRadius = 5
 
         // Do any additional setup after loading the view.
     }

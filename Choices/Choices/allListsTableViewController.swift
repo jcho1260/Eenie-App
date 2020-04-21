@@ -91,7 +91,18 @@ class allListsTableViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
         
         //"Scan in input" button
-        alertController.addAction(UIAlertAction(title: "Scan-in Text", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Scan-in Text", style: .default, handler: {action in
+            if let newItem = self.textField.text, newItem != "" {
+                            let choiceObject = [
+                                "id": self.choiceRef?.key,
+                                "name": newItem,
+                                "choices": [String:Choice]()
+                            ] as [String: Any]
+                            self.newList = choiceObject
+                            self.choiceRef?.setValue(choiceObject, withCompletionBlock: { error, ref in})
+                self.performSegue(withIdentifier: "MLViewController", sender: self)
+            }
+        }))
     }
  
     
@@ -100,6 +111,13 @@ class allListsTableViewController: UITableViewController {
         super.viewDidLoad()
         observeLists()
         self.modalPresentationStyle = .overFullScreen
+        assignBackground()
+    }
+    
+    func assignBackground(){
+        let backgroundImage = UIImageView(image: UIImage(named: "tiger-transparent"))
+        backgroundImage.contentMode = .scaleAspectFill
+        tableView.backgroundView = backgroundImage
     }
     
     //getting all the lists and showing in table view
@@ -154,6 +172,12 @@ class allListsTableViewController: UITableViewController {
                 displayTVC.listID = myCurrCell.listID!
                 displayTVC.listName = myCurrCell.listName!
         }
+        else if(segue.identifier == "MLViewController"){
+            print("segue id:", segue.identifier)
+            let displayVC = segue.destination as! MLViewController
+            displayVC.listInfo = newList
+        }
+        
             
        }
 
@@ -179,6 +203,11 @@ class allListsTableViewController: UITableViewController {
         cell.listID = lists.id
         cell.listName = lists.name
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // #warning Incomplete implementation, return the number of rows
+        cell.backgroundColor = UIColor.clear
     }
     
     // Override to support editing the table view.

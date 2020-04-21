@@ -14,9 +14,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTf: UITextField!
     @IBOutlet weak var emailTf: UITextField!
     var db: OpaquePointer?
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var eenieNameLabel: UILabel!
+    
+//    var gradientLayer: CAGradientLayer!
+//
+//    func createGradientLayer() {
+//        gradientLayer = CAGradientLayer()
+//
+//        gradientLayer.frame = self.view.bounds
+//
+//        let colorTop = UIColor(red: 245.0/255.0, green: 138.0/255.0, blue: 48.0/255.0, alpha: 1.0)
+//
+//        let colorBottom = UIColor.white.cgColor
+//
+//        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+//        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+//
+//        gradientLayer.colors = [colorTop, colorBottom]
+//
+//        self.view.layer.addSublayer(gradientLayer)
+//    }
     
   override func viewDidLoad() {
     super.viewDidLoad()
+    loginButton.layer.cornerRadius = 5
+    eenieNameLabel.text = "eenie"
     // Do any additional setup after loading the view.
 
     

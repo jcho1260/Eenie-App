@@ -39,11 +39,18 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var textChoice: UITextField!
     
     @IBAction func saveList(_ sender: Any) {
-         let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
+         chooseFromList()
+    }
+    
+    @objc func chooseFromList() {
+        let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
          let alertController = UIAlertController(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Back to All Lists", style: .default, handler: {action in
-            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popToRootViewController(animated: true)
             }))
+        alertController.addAction(UIAlertAction(title: "Choose Again", style: .default, handler: {action in
+            self.chooseFromList()
+        }))
          present(alertController, animated: true, completion: nil)
     }
     
@@ -75,8 +82,15 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         reloadChoices()
         self.tableChoices.delegate = self
         self.tableChoices.dataSource = self
-        
+        assignBackground()
     }
+    
+    func assignBackground(){
+            let backgroundImage = UIImageView(image: UIImage(named: "tiger-transparent"))
+            backgroundImage.contentMode = .scaleAspectFill
+            tableChoices.backgroundView = backgroundImage
+        }
+    
     
     func reloadChoices(){
         let userID = user?.uid
@@ -151,6 +165,11 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         choices = allChoices[indexPath.row]
         cell.choiceText.text = choices.text
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // #warning Incomplete implementation, return the number of rows
+        cell.backgroundColor = UIColor.clear
     }
     
     
