@@ -101,7 +101,7 @@ class MLViewController: UIViewController, UINavigationControllerDelegate {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    navigationController?.navigationBar.isHidden = true
+    //navigationController?.navigationBar.isHidden = false
   }
 
   override func viewWillDisappear(_ animated: Bool) {

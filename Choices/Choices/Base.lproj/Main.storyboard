@@ -159,7 +159,7 @@
                                     <action selector="createAccountPushed:" destination="wWP-nE-v3L" eventType="touchUpInside" id="08Y-yy-wtp"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiger2" translatesAutoresizingMaskIntoConstraints="NO" id="hee-IU-AE8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.15000000074505809" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiger2" translatesAutoresizingMaskIntoConstraints="NO" id="hee-IU-AE8">
                                 <rect key="frame" x="-183.66666666666666" y="378" width="781.33333333333337" height="652"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hee-IU-AE8" secondAttribute="height" multiplier="781:652" id="CDj-ox-Sex"/>
@@ -524,7 +524,7 @@
                                     <segue destination="Z4i-sO-UJ3" kind="show" id="WEi-ow-may"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiger2" translatesAutoresizingMaskIntoConstraints="NO" id="ahf-y8-5FM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.15000000074505809" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiger2" translatesAutoresizingMaskIntoConstraints="NO" id="ahf-y8-5FM">
                                 <rect key="frame" x="-556" y="-208" width="1045" height="1104"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1104" id="QNv-iS-zLx"/>
