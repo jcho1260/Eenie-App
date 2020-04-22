@@ -82,7 +82,7 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
         reloadChoices()
         self.tableChoices.delegate = self
         self.tableChoices.dataSource = self
-        assignBackground()
+        //assignBackground()
     }
     
     func assignBackground(){

@@ -106,7 +106,7 @@ class allListsTableViewController: UITableViewController {
         super.viewDidLoad()
         observeLists()
         self.modalPresentationStyle = .overFullScreen
-        assignBackground()
+        //assignBackground()
     }
     
     func assignBackground(){
