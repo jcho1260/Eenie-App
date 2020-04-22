@@ -1,5 +1,7 @@
 SIMPLE DECISION MAKING APP (RANDOMIZED SELECTION)
 
+YOUTUBE APP WALK-THROUGH LINK: https://www.youtube.com/watch?v=oiXPE9ELDWA
+
 Overall Description: Users will be able to input different options they would like to choose between. The user will be able to either create a new list of options or choose from a pre-existing list they had created before that is saved onto their device/account. We will be starting off by allowing for basic text input but will later on implement an option to scan in text through the camera by selecting certain text from an image and an option to input images from the camera roll or taking photos on the spot. The app will randomly choose one of the options inputted and display that to the user.
 
 StoryBoard Planning:
