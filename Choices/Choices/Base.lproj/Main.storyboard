@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -116,9 +116,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ND9-fk-OdY">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ND9-fk-OdY">
                                 <rect key="frame" x="34" y="20" width="46" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" red="0.82025390860000003" green="0.98031526800000002" blue="0.98039692639999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -176,8 +175,10 @@
                             <constraint firstItem="hee-IU-AE8" firstAttribute="centerY" secondItem="LMT-6I-tvE" secondAttribute="centerY" constant="300" id="FxP-gd-O6l"/>
                             <constraint firstItem="SOe-bh-89l" firstAttribute="centerX" secondItem="LMT-6I-tvE" secondAttribute="centerX" id="N5m-XD-llg"/>
                             <constraint firstItem="hee-IU-AE8" firstAttribute="centerX" secondItem="LMT-6I-tvE" secondAttribute="centerX" id="aSL-Xc-7lP"/>
+                            <constraint firstItem="ND9-fk-OdY" firstAttribute="top" secondItem="LMT-6I-tvE" secondAttribute="top" constant="20" id="hpN-Ea-fiI"/>
                             <constraint firstItem="SOe-bh-89l" firstAttribute="top" secondItem="LMT-6I-tvE" secondAttribute="top" constant="468" id="i6E-0I-RZQ"/>
                             <constraint firstItem="ZEu-OF-kdb" firstAttribute="top" secondItem="LMT-6I-tvE" secondAttribute="top" constant="334" id="l9m-Hb-mL1"/>
+                            <constraint firstItem="ND9-fk-OdY" firstAttribute="leading" secondItem="LMT-6I-tvE" secondAttribute="leading" constant="34" id="rh5-LX-mal"/>
                             <constraint firstItem="QOh-OK-UrG" firstAttribute="centerX" secondItem="LMT-6I-tvE" secondAttribute="centerX" id="rpM-n5-rYy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LMT-6I-tvE"/>
@@ -790,6 +791,10 @@
             <point key="canvasLocation" x="2780" y="-684"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Zd8-vO-k0c"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.85863108649999997" green="0.62964346579999997" blue="0.35886742980000003" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
     <resources>
         <image name="cloud_download" width="36" height="36"/>
         <image name="magic8" width="150" height="147"/>
@@ -798,8 +803,4 @@
         <image name="switch_camera" width="16" height="16"/>
         <image name="tiger2" width="1024" height="1024"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Zd8-vO-k0c"/>
-    </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.85863108649999997" green="0.62964346579999997" blue="0.35886742980000003" alpha="1" colorSpace="custom" customColorSpace="deviceRGB"/>
 </document>
