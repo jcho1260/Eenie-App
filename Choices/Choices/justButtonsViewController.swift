@@ -27,11 +27,11 @@ class justButtonsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      self.view.backgroundColor = #colorLiteral(red: 0.8586310865, green: 0.6296434658, blue: 0.5, alpha: 1)
+      //self.view.backgroundColor = #colorLiteral(red: 0.8586310865, green: 0.6296434658, blue: 0.5, alpha: 1)
       //self.view.backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1)
-      listButton.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.5450980392, blue: 0.5450980392, alpha: 1)
+      //listButton.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.5450980392, blue: 0.5450980392, alpha: 1)
       listButton.layer.cornerRadius = 8
-      magicButton.backgroundColor = #colorLiteral(red: 0.8705882353, green: 0.568627451, blue: 0.3176470588, alpha: 1)
+      //magicButton.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.5450980392, blue: 0.5450980392, alpha: 1)
       magicButton.layer.cornerRadius = 8
 
         // Do any additional setup after loading the view.
