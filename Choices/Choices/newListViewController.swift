@@ -43,6 +43,13 @@ class newListViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @objc func chooseFromList() {
+        guard self.allChoices.count != 0 else{
+            let alert1 = UIAlertController(title: "Error", message: "Can't randomly choose on empty list", preferredStyle: .alert) //.actionSheet
+            alert1.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(alert1, animated: true)
+            return
+        }
         let randomlyChosenChoice = RandomChoice.selectOne(choices: self.allChoices)
          let alertController = UIAlertController(title: "Choice Selected", message: "Randomly selected: \(randomlyChosenChoice.text)", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Back to Main", style: .default, handler: {action in
